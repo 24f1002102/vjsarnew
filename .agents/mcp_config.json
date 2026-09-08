@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "wix": {
+      "serverUrl": "https://mcp.composio.dev/v1/wix",
+      "headers": {
+        "x-api-key": "ck_zng-w0VhSckWyV0j_963"
+      }
+    }
+  }
+}
