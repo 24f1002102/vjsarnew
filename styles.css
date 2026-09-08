@@ -925,6 +925,91 @@ p {
 }
 
 /* ═══════════════════════════════════════════════════════════
+   VIDEO BACKGROUND CARD — Cloud Adoption & Azure
+   ═══════════════════════════════════════════════════════════ */
+.svc-video-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* The video sits behind everything */
+.svc-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 0;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Dark gradient overlay for text contrast */
+.svc-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(19, 31, 72, 0.72) 0%,
+    rgba(31, 113, 185, 0.55) 60%,
+    rgba(36, 182, 234, 0.35) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1;
+  border-radius: inherit;
+}
+
+/* All direct children of the card sit above video */
+.svc-video-card > *:not(.svc-bg-video):not(.svc-video-overlay) {
+  position: relative;
+  z-index: 2;
+}
+
+/* On hover: fade video in, scale back to normal, show overlay */
+.svc-video-card:hover .svc-bg-video {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.svc-video-card:hover .svc-video-overlay {
+  opacity: 1;
+}
+
+/* When video is showing, flip text/icon colors to white */
+.svc-video-card:hover .svc-title,
+.svc-video-card:hover .svc-desc,
+.svc-video-card:hover .svc-num {
+  color: rgba(255, 255, 255, 0.95);
+  transition: color 0.4s ease;
+}
+
+.svc-video-card:hover .svc-icon {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.svc-video-card:hover .tag {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.9);
+  transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+}
+
+/* keep border glow on hover */
+.svc-video-card:hover {
+  border-color: rgba(36, 182, 234, 0.6);
+  box-shadow: 0 16px 48px rgba(31, 113, 185, 0.35), 0 0 0 1px rgba(36, 182, 234, 0.4);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
    INDUSTRIES TABS
    ═══════════════════════════════════════════════════════════ */
 .tab-row {

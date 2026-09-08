@@ -245,10 +245,15 @@
     </div>
 
     <div class="services-grid reveal-stagger">
-      <div class="service-card">
+      <div class="service-card svc-video-card">
+        <!-- Video background — plays on hover -->
+        <video class="svc-bg-video" src="Bg.mp4" muted loop playsinline preload="metadata"></video>
+        <!-- Overlay so text stays readable -->
+        <div class="svc-video-overlay"></div>
+        <!-- Card content -->
         <span class="svc-num">01</span>
         <div class="svc-icon"><i class="fas fa-cloud"></i></div>
-        <h4 class="svc-title">Cloud Adoption & Azure</h4>
+        <h4 class="svc-title">Cloud Adoption &amp; Azure</h4>
         <p class="svc-desc">Strategic cloud migration, multi-cloud architecture design, cost optimisation, and Azure governance.</p>
         <div class="svc-tags">
           <span class="tag">Azure Migration</span>
@@ -614,5 +619,22 @@
 </footer>
 
 <script src="app.js"></script>
+<script>
+  /* ── Cloud Adoption card video play/pause on hover ── */
+  (function () {
+    const card = document.querySelector('.svc-video-card');
+    const video = card && card.querySelector('.svc-bg-video');
+    if (!card || !video) return;
+
+    card.addEventListener('mouseenter', () => {
+      video.currentTime = 0;
+      video.play().catch(() => {});   // catch autoplay policy errors silently
+    });
+
+    card.addEventListener('mouseleave', () => {
+      video.pause();
+    });
+  })();
+</script>
 </body>
 </html>
