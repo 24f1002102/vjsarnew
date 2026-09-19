@@ -1,640 +1,999 @@
 <!DOCTYPE html>
 <!-- VJSAR Website v2 — Light Theme + Scroll Animations -->
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VJSAR | Enterprise IT Solutions, Azure Cloud & AI Engineering | London</title>
-  <meta name="description" content="VJSAR is a London-headquartered IT consultancy specialising in Microsoft Azure cloud adoption, AI & machine learning, enterprise application modernisation, data analytics, and the Context Insurance Platform.">
+  <meta name="description"
+    content="VJSAR is a London-headquartered IT consultancy specialising in Microsoft Azure cloud adoption, AI & machine learning, enterprise application modernisation, data analytics, and the Context Insurance Platform.">
 
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=95">
+
 </head>
+
 <body>
 
-<!-- Cursor glow element -->
-<div class="cursor-glow" id="cursor-glow"></div>
+  <!-- Cursor glow element -->
+  <div class="cursor-glow" id="cursor-glow"></div>
 
-<!-- ════════════════════════════════════════════
+  <!-- ════════════════════════════════════════════
      NAVBAR
      ════════════════════════════════════════════ -->
-<header class="navbar" id="navbar">
-  <div class="container nav-container">
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
 
-    <!-- Logo: Real mark image LEFT + Real wordmark image RIGHT -->
-    <a href="#" class="brand-logo" aria-label="VJSAR Home">
-      <img
-        src="logo-mark.png"
-        alt="VJSAR logo mark"
-        class="logo-mark-img"
-      />
-      <img
-        src="logo-wordmark.png"
-        alt="VJSAR — Committed to Excellence"
-        class="logo-wordmark-img"
-      />
-    </a>
-
-    <!-- Nav links -->
-    <ul class="nav-links">
-      <li class="nav-item">
-        <a href="#platform" class="nav-link">
-          Platform <span class="platform-badge">Context</span>
-        </a>
-        <ul class="dropdown-menu">
-          <li class="dropdown-item"><a href="https://contextdms.com" target="_blank"><i class="fas fa-folder-open"></i>Context DMS</a></li>
-          <li class="dropdown-item"><a href="https://contextclaim.com" target="_blank"><i class="fas fa-clipboard-check"></i>Context Claim</a></li>
-          <li class="dropdown-item"><a href="https://contextworkbench.com" target="_blank"><i class="fas fa-laptop-code"></i>Context Workbench</a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a href="#services" class="nav-link">Services <i class="fas fa-chevron-down" style="font-size:.65rem;"></i></a>
-        <ul class="dropdown-menu">
-          <li class="dropdown-item"><a href="#services"><i class="fas fa-cloud"></i>Cloud Adoption & Azure</a></li>
-          <li class="dropdown-item"><a href="#services"><i class="fas fa-brain"></i>AI & Machine Learning</a></li>
-          <li class="dropdown-item"><a href="#services"><i class="fas fa-code-branch"></i>App Modernisation</a></li>
-          <li class="dropdown-item"><a href="#services"><i class="fas fa-chart-bar"></i>Data & Analytics</a></li>
-          <li class="dropdown-item"><a href="#services"><i class="fas fa-cubes"></i>Low Code / No Code</a></li>
-          <li class="dropdown-item"><a href="#services"><i class="fas fa-infinity"></i>SRE & DevOps</a></li>
-          <li class="dropdown-item"><a href="#services"><i class="fas fa-vial"></i>Quality Assurance</a></li>
-        </ul>
-      </li>
-      <li class="nav-item"><a href="#industries" class="nav-link">Industries</a></li>
-      <li class="nav-item"><a href="#calculator" class="nav-link">Estimate</a></li>
-      <li class="nav-item"><a href="#team" class="nav-link">About</a></li>
-    </ul>
-
-    <!-- Actions -->
-    <div class="nav-actions">
-      <a href="mailto:info@vjsar.com" class="btn btn-outline">
-        <i class="fas fa-envelope"></i> Contact
+      <!-- Logo: Real mark image LEFT + Real wordmark image RIGHT -->
+      <a href="#" class="brand-logo" aria-label="VJSAR Home">
+        <img src="logo-mark.png" alt="VJSAR logo mark" class="logo-mark-img" />
+        <img src="logo-wordmark.png" alt="VJSAR — Committed to Excellence" class="logo-wordmark-img" />
       </a>
-      <button class="btn btn-primary open-modal" id="nav-cta">
-        <i class="fas fa-calendar-check"></i> Book Consultation
-      </button>
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
 
-  </div>
-</header>
+      <!-- Nav links -->
+      <ul class="nav-links">
+        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+        <li class="nav-item">
+          <a href="#platform" class="nav-link">
+            Platform <span class="platform-badge">Context</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item"><a href="https://www.context.insure/" target="_blank"><i
+                  class="fas fa-shield-halved"></i>Context Insure</a></li>
+            <li class="dropdown-item"><a href="https://contextdms.com" target="_blank"><i
+                  class="fas fa-folder-open"></i>Context DMS</a></li>
+            <li class="dropdown-item"><a href="https://contextclaim.com" target="_blank"><i
+                  class="fas fa-clipboard-check"></i>Context Claim</a></li>
+            <li class="dropdown-item"><a href="https://contextworkbench.com" target="_blank"><i
+                  class="fas fa-laptop-code"></i>Context Workbench</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#services" class="nav-link">Services <i class="fas fa-chevron-down"
+              style="font-size:.65rem;"></i></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item"><a href="#services"><i class="fas fa-cloud"></i>Cloud Adoption & Azure</a></li>
+            <li class="dropdown-item"><a href="#services"><i class="fas fa-brain"></i>AI & Machine Learning</a></li>
+            <li class="dropdown-item"><a href="#services"><i class="fas fa-code-branch"></i>App Modernisation</a></li>
+            <li class="dropdown-item"><a href="#services"><i class="fas fa-chart-bar"></i>Data & Analytics</a></li>
+            <li class="dropdown-item"><a href="#services"><i class="fas fa-cubes"></i>Low Code / No Code</a></li>
+            <li class="dropdown-item"><a href="#services"><i class="fas fa-infinity"></i>SRE & DevOps</a></li>
+            <li class="dropdown-item"><a href="#services"><i class="fas fa-vial"></i>Quality Assurance</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="#industries" class="nav-link">Industries</a></li>
+        <li class="nav-item"><a href="#team" class="nav-link">About</a></li>
+      </ul>
 
-<!-- ════════════════════════════════════════════
-     HERO
-     ════════════════════════════════════════════ -->
-<section class="hero">
-  <div class="container hero-inner">
-
-    <!-- Left: copy -->
-    <div class="hero-content">
-      <div class="hero-pill reveal" style="transition-delay:0.0s">
-        <span class="pill-dot"></span>
-        London HQ · UK, Chennai &amp; Bengaluru Delivery Centres
-      </div>
-
-      <h1 class="hero-title reveal" style="transition-delay:0.1s">
-        Enterprise IT<br>
-        Engineered for<br>
-        <span class="hero-rotating-wrap">
-          <span class="rotating-text" id="rotator">Cloud & Azure</span>
-        </span>
-      </h1>
-
-      <p class="hero-desc reveal" style="transition-delay:0.2s">
-        Combining proven Microsoft Azure expertise with deep business domain intelligence — VJSAR accelerates digital transformation across cloud, AI, modernisation, and the proprietary Context Insurance Suite.
-      </p>
-
-      <div class="hero-ctas reveal" style="transition-delay:0.3s">
-        <a href="#calculator" class="btn btn-primary">
-          <i class="fas fa-calculator"></i> Calculate Budget
-        </a>
-        <a href="#services" class="btn btn-outline">
-          Explore Services <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
-
-      <div class="hero-stats reveal-stagger" style="transition-delay:0.4s">
-        <div>
-          <div class="stat-val">99.9<span>%</span></div>
-          <div class="stat-label">Uptime SLA Guarantee</div>
-        </div>
-        <div>
-          <div class="stat-val">50<span>+</span></div>
-          <div class="stat-label">Enterprise Clients</div>
-        </div>
-        <div>
-          <div class="stat-val">3<span> Hubs</span></div>
-          <div class="stat-label">UK, Chennai & Bengaluru</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Right: visual card -->
-    <div class="hero-visual reveal-right" style="transition-delay:0.15s">
-      <div class="hero-card tilt-card" id="hero-card">
-        <div class="card-topbar">
-          <div class="card-dots">
-            <span class="card-dot green"></span>
-            <span class="card-dot"></span>
-            <span class="card-dot"></span>
-          </div>
-          <span class="card-chip"><i class="fas fa-shield-halved"></i> Azure Certified</span>
-        </div>
-
-        <div class="code-block">
-          <p><span class="tok-note">// VJSAR Cloud Deployment Config</span></p>
-          <p><span class="tok-key">import</span> { AzureCloud } <span class="tok-key">from</span> <span class="tok-str">'@vjsar/core'</span>;</p>
-          <br>
-          <p><span class="tok-key">const</span> stack = <span class="tok-key">new</span> AzureCloud({</p>
-          <p>&nbsp;&nbsp;region: <span class="tok-str">'uk-south'</span>,</p>
-          <p>&nbsp;&nbsp;services: [<span class="tok-str">'AI'</span>, <span class="tok-str">'ContextDMS'</span>],</p>
-          <p>&nbsp;&nbsp;sla: <span class="tok-val">99.9</span>,</p>
-          <p>&nbsp;&nbsp;compliance: <span class="tok-str">'ISO27001'</span></p>
-          <p>});</p>
-          <br>
-          <p><span class="tok-key">await</span> stack.deploy();</p>
-          <p><span class="tok-note">// ✓ 40% operational efficiency gain</span></p>
-        </div>
-      </div>
-
-      <div class="float-card">
-        <div class="float-icon"><i class="fas fa-check"></i></div>
-        <div class="float-text">
-          <strong>Microsoft Gold Partner</strong>
-          <span>Cloud & DevOps Excellence</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════
-     CONTEXT PLATFORM
-     ════════════════════════════════════════════ -->
-<section id="platform" class="section section-alt">
-  <div class="container">
-    <div class="section-header center reveal">
-      <div class="section-line"></div>
-      <span class="eyebrow green"><i class="fas fa-layer-group"></i> Proprietary Platform</span>
-      <h2>The Context Suite for Enterprise Insurance</h2>
-      <p>Purpose-built software products engineering by VJSAR to transform insurance underwriting, document management, and claims lifecycle.</p>
-    </div>
-
-    <div class="platform-grid reveal-stagger">
-      <div class="platform-card">
-        <div class="card-icon"><i class="fas fa-folder-open"></i></div>
-        <h3 class="card-title">Context DMS</h3>
-        <p class="card-desc">Intelligent document management for insurance compliance, secure archiving, and rapid policy retrieval at enterprise scale.</p>
-        <ul class="card-features">
-          <li><i class="fas fa-check"></i> AI-powered OCR & Document Indexing</li>
-          <li><i class="fas fa-check"></i> Audit-Ready Compliance Vaults</li>
-          <li><i class="fas fa-check"></i> Azure Cloud Integration</li>
-        </ul>
-        <a href="https://contextdms.com" target="_blank" class="btn btn-outline" style="width:100%;justify-content:center;">
-          Visit contextdms.com <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-
-      <div class="platform-card featured tilt-card">
-        <div class="card-icon"><i class="fas fa-clipboard-check"></i></div>
-        <h3 class="card-title">Context Claim</h3>
-        <p class="card-desc">AI-powered end-to-end claims lifecycle management — reducing settlement times from weeks to minutes.</p>
-        <ul class="card-features">
-          <li><i class="fas fa-check"></i> Automated FNOL Processing</li>
-          <li><i class="fas fa-check"></i> Real-time Fraud Detection</li>
-          <li><i class="fas fa-check"></i> Broker & Policyholder Portals</li>
-        </ul>
-        <a href="https://contextclaim.com" target="_blank" class="btn btn-accent" style="width:100%;justify-content:center;">
-          Visit contextclaim.com <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-
-      <div class="platform-card">
-        <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
-        <h3 class="card-title">Context Workbench</h3>
-        <p class="card-desc">Low-code developer environment for rapidly building custom insurance workflows and automations without infrastructure complexity.</p>
-        <ul class="card-features">
-          <li><i class="fas fa-check"></i> Visual Workflow Builder</li>
-          <li><i class="fas fa-check"></i> Pre-built Insurance API Connectors</li>
-          <li><i class="fas fa-check"></i> Enterprise Role Access Control</li>
-        </ul>
-        <a href="https://contextworkbench.com" target="_blank" class="btn btn-outline" style="width:100%;justify-content:center;">
-          Visit contextworkbench.com <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════
-     SERVICES
-     ════════════════════════════════════════════ -->
-<section id="services" class="section">
-  <div class="container">
-    <div class="section-header reveal-left">
-      <div class="section-line"></div>
-      <span class="eyebrow"><i class="fas fa-cogs"></i> Our Capabilities</span>
-      <h2>End-to-End Enterprise IT Consulting</h2>
-      <p>Tailored technology solutions across seven core disciplines, engineered to solve complex operational challenges at scale.</p>
-    </div>
-
-    <div class="services-grid reveal-stagger">
-      <div class="service-card svc-video-card">
-        <!-- Video background — plays on hover -->
-        <video class="svc-bg-video" src="Bg.mp4" muted loop playsinline preload="metadata"></video>
-        <!-- Overlay so text stays readable -->
-        <div class="svc-video-overlay"></div>
-        <!-- Card content -->
-        <span class="svc-num">01</span>
-        <div class="svc-icon"><i class="fas fa-cloud"></i></div>
-        <h4 class="svc-title">Cloud Adoption &amp; Azure</h4>
-        <p class="svc-desc">Strategic cloud migration, multi-cloud architecture design, cost optimisation, and Azure governance.</p>
-        <div class="svc-tags">
-          <span class="tag">Azure Migration</span>
-          <span class="tag">FinOps</span>
-          <span class="tag">Cloud Security</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="svc-num">02</span>
-        <div class="svc-icon"><i class="fas fa-brain"></i></div>
-        <h4 class="svc-title">AI & Machine Learning</h4>
-        <p class="svc-desc">Generative AI integration, predictive analytics pipelines, intelligent automation, and LLM-powered products.</p>
-        <div class="svc-tags">
-          <span class="tag">LLM Integration</span>
-          <span class="tag">Predictive Models</span>
-          <span class="tag">NLP</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="svc-num">03</span>
-        <div class="svc-icon"><i class="fas fa-code-branch"></i></div>
-        <h4 class="svc-title">Application Modernisation</h4>
-        <p class="svc-desc">Refactoring legacy systems into cloud-native microservices with modern .NET Core and React stacks.</p>
-        <div class="svc-tags">
-          <span class="tag">Microservices</span>
-          <span class="tag">.NET Core</span>
-          <span class="tag">React</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="svc-num">04</span>
-        <div class="svc-icon"><i class="fas fa-chart-bar"></i></div>
-        <h4 class="svc-title">Data & Analytics</h4>
-        <p class="svc-desc">Enterprise data warehousing, real-time BI dashboards, ETL pipelines, and data governance frameworks.</p>
-        <div class="svc-tags">
-          <span class="tag">Power BI</span>
-          <span class="tag">Data Factory</span>
-          <span class="tag">ETL</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="svc-num">05</span>
-        <div class="svc-icon"><i class="fas fa-cubes"></i></div>
-        <h4 class="svc-title">Low Code / No Code</h4>
-        <p class="svc-desc">Rapid application delivery with Microsoft Power Platform and custom workflow automation engines.</p>
-        <div class="svc-tags">
-          <span class="tag">Power Apps</span>
-          <span class="tag">Power Automate</span>
-          <span class="tag">Rapid MVP</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="svc-num">06</span>
-        <div class="svc-icon"><i class="fas fa-infinity"></i></div>
-        <h4 class="svc-title">SRE & DevOps</h4>
-        <p class="svc-desc">CI/CD pipeline automation, Infrastructure as Code (Terraform), 99.99% reliability engineering.</p>
-        <div class="svc-tags">
-          <span class="tag">Terraform</span>
-          <span class="tag">Kubernetes</span>
-          <span class="tag">CI/CD</span>
-        </div>
-      </div>
-
-      <!-- Wide card spanning all columns -->
-      <div class="service-card wide">
-        <span class="svc-num">07</span>
-        <div>
-          <div class="svc-icon"><i class="fas fa-vial"></i></div>
-          <h4 class="svc-title">Quality Assurance & Automated Testing</h4>
-          <p class="svc-desc">Automated regression, performance load testing, security scanning, and continuous quality integration for enterprise releases.</p>
-        </div>
-        <div class="svc-tags" style="justify-content:flex-end;">
-          <span class="tag">Selenium</span>
-          <span class="tag">Load Testing</span>
-          <span class="tag">Security Audit</span>
-          <span class="tag">API Verification</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════
-     INDUSTRIES
-     ════════════════════════════════════════════ -->
-<section id="industries" class="section section-alt">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-line"></div>
-      <span class="eyebrow"><i class="fas fa-building"></i> Industry Expertise</span>
-      <h2>Specialised Solutions for Regulated Markets</h2>
-      <p>Tailored technology frameworks built to meet strict compliance, security, and performance standards across major financial and healthcare verticals.</p>
-    </div>
-
-    <div class="tab-row">
-      <button class="tab-btn active" data-industry="insurance"><i class="fas fa-shield-alt"></i> Insurance</button>
-      <button class="tab-btn" data-industry="banking"><i class="fas fa-university"></i> Banking</button>
-      <button class="tab-btn" data-industry="finance"><i class="fas fa-coins"></i> Financial Services</button>
-      <button class="tab-btn" data-industry="healthcare"><i class="fas fa-heartbeat"></i> Healthcare</button>
-    </div>
-
-    <div class="industry-panel reveal-scale">
-      <div>
-        <h3 class="ind-title" id="ind-title">Insurance & Claims Modernisation</h3>
-        <p class="ind-desc" id="ind-desc">Empowering insurers with intelligent automation, Context Claim processing, legacy refactoring, and AI-assisted underwriting.</p>
-        <ul class="benefit-list" id="ind-list">
-          <li><i class="fas fa-check-circle"></i> Automated Claims Intake via Context DMS</li>
-          <li><i class="fas fa-check-circle"></i> Legacy Policy Admin Modernisation to Azure</li>
-          <li><i class="fas fa-check-circle"></i> Real-time Fraud Detection & Risk Analytics</li>
-          <li><i class="fas fa-check-circle"></i> Solvency II & FCA Compliance Architectures</li>
-        </ul>
-        <button class="btn btn-primary open-modal">
-          <i class="fas fa-arrow-right"></i> Request Industry Brief
+      <!-- Actions -->
+      <div class="nav-actions">
+        <button class="btn btn-primary open-modal" id="nav-cta">
+          <i class="fas fa-envelope"></i> Contact Us
+        </button>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu">
+          <i class="fas fa-bars"></i>
         </button>
       </div>
 
-      <div class="ind-visual">
-        <div class="ind-visual-row">
-          <div class="ivr-icon"><i class="fas fa-file-shield"></i></div>
-          <div><div class="ivr-title">Compliance Framework</div><div class="ivr-sub">Solvency II · FCA · GDPR Ready</div></div>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════════
+     HERO
+     ════════════════════════════════════════════ -->
+  <section class="hero">
+    <!-- Background video playing in hero banner (seamless continuous flow, horizontally flipped) -->
+    <div class="hero-video-wrap">
+      <video class="hero-bg-video" autoplay muted loop playsinline preload="auto">
+        <source src="Green.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="container hero-container">
+      <div class="hero-inner">
+
+        <!-- Left: copy (Row 1, Col 1) -->
+        <div class="hero-content">
+          <div class="hero-pill reveal" style="transition-delay:0.0s">
+            <span class="pill-dot"></span>
+            London HQ · UK, Chennai &amp; Bengaluru Delivery Centres
+          </div>
+
+          <h1 class="hero-title reveal" style="transition-delay:0.1s">
+            Enterprise IT<br>
+            Engineered for<br>
+            <span class="hero-rotating-wrap">
+              <span class="rotating-text" id="rotator">Low Code<br>Platforms</span>
+            </span>
+          </h1>
+
+          <p class="hero-desc reveal" style="transition-delay:0.2s">
+            Technology. Engineered Around Your Business. VJSAR combines enterprise technology expertise with deep
+            business-domain intelligence to turn complex challenges into scalable digital solutions.
+          </p>
         </div>
-        <div class="ind-visual-row">
-          <div class="ivr-icon"><i class="fas fa-robot"></i></div>
-          <div><div class="ivr-title">AI Claims Automation</div><div class="ivr-sub">FNOL to Settlement in Minutes</div></div>
+
+        <!-- Right: visual card (Row 1, Col 2) -->
+        <div class="hero-visual reveal-right" style="transition-delay:0.15s">
+          <div class="hero-card-wrapper">
+            <div class="hero-card enterprise-console" id="hero-card">
+              <!-- Console Top Bar -->
+              <div class="console-topbar">
+                <div class="card-dots">
+                  <span class="card-dot"></span>
+                  <span class="card-dot"></span>
+                  <span class="card-dot"></span>
+                </div>
+                <div class="console-url-badge">
+                  <i class="fas fa-lock" style="color:#10B981;font-size:0.65rem;"></i> vjsar.com
+                </div>
+              </div>
+
+              <!-- Console Search / Command Bar -->
+              <div class="console-search-bar">
+                <i class="fas fa-search search-icon"></i>
+                <div class="search-text-wrap">
+                  <span id="console-query-text">Lloyd's Marine policy compliance &amp; clause review</span><span
+                    class="console-cursor">|</span>
+                </div>
+              </div>
+
+              <!-- Live Workload Items List -->
+              <div class="console-records-list">
+                <!-- Item 1: Context Insure / Ingestion -->
+                <div class="console-record-item">
+                  <div class="record-icon-wrap icon-blue">
+                    <i class="fas fa-file-shield"></i>
+                  </div>
+                  <div class="record-body">
+                    <div class="record-header-row">
+                      <div class="record-title">Marine Hull &amp; Cargo Binder 2026.pdf</div>
+                      <span class="record-badge badge-green">Pre-Bind Approved</span>
+                    </div>
+                    <div class="record-meta">
+                      <span>Miller Syndicate #8492</span>
+                      <span class="dot-sep">·</span>
+                      <span>London Underwriting</span>
+                    </div>
+                    <div class="record-tags">
+                      <span class="rec-tag tag-blue">Context Insure</span>
+                      <span class="rec-tag tag-gray">Lloyd's Gate</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item 2: Context DMS / Semantic Clause Match -->
+                <div class="console-record-item">
+                  <div class="record-icon-wrap icon-purple">
+                    <i class="fas fa-microchip"></i>
+                  </div>
+                  <div class="record-body">
+                    <div class="record-header-row">
+                      <div class="record-title">Sanctions &amp; War Risk Clause Review</div>
+                      <span class="record-badge badge-cyan">0 Clause Drift</span>
+                    </div>
+                    <div class="record-meta">
+                      <span>Beazley Reinsurance</span>
+                      <span class="dot-sep">·</span>
+                      <span>42 Endorsements Matched</span>
+                    </div>
+                    <div class="record-tags">
+                      <span class="rec-tag tag-purple">Context DMS</span>
+                      <span class="rec-tag tag-green">ISO 27001</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item 3: Azure Cloud Architecture Telemetry -->
+                <div class="console-record-item">
+                  <div class="record-icon-wrap icon-navy">
+                    <i class="fas fa-network-wired"></i>
+                  </div>
+                  <div class="record-body">
+                    <div class="record-header-row">
+                      <div class="record-title">Azure UK-South ↔ Bengaluru Mesh</div>
+                      <span class="record-badge badge-blue">99.99% Health</span>
+                    </div>
+                    <div class="record-meta">
+                      <span>Production Microservices</span>
+                      <span class="dot-sep">·</span>
+                      <span>Zero Latency Spike</span>
+                    </div>
+                    <div class="record-tags">
+                      <span class="rec-tag tag-navy">Kubernetes</span>
+                      <span class="rec-tag tag-amber">Terraform</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom Telemetry Metrics Strip -->
+              <div class="console-metrics-row">
+                <div class="console-metric">
+                  <div class="metric-val text-builder" data-count="173" data-suffix="ms" data-decimals="0"><span class="stat-num">0</span>ms</div>
+                  <div class="metric-label">AI Latency</div>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="console-metric">
+                  <div class="metric-val text-navy" data-count="12.4" data-suffix="M+" data-decimals="1"><span class="stat-num">0.0</span>M+</div>
+                  <div class="metric-label">Records Processed</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="float-card">
+              <div class="float-icon"><i class="fas fa-check"></i></div>
+              <div class="float-text">
+                <strong>Microsoft Gold Partner</strong>
+                <span>Cloud &amp; DevOps Excellence</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="ind-visual-row">
-          <div class="ivr-icon"><i class="fas fa-cloud"></i></div>
-          <div><div class="ivr-title">Azure Cloud Migration</div><div class="ivr-sub">99.9% Uptime · Zero-Downtime Cutover</div></div>
+
+        <!-- Left: CTAs (Row 2, Col 1 — locked to stats row) -->
+        <div class="hero-ctas reveal" style="transition-delay:0.3s">
+          <button class="btn btn-primary open-modal" id="hero-cta">
+            <i class="fas fa-envelope"></i> Contact Us
+          </button>
+          <a href="#services" class="btn btn-outline">
+            Explore Services <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
-        <div class="ind-visual-row">
-          <div class="ivr-icon" style="background:var(--green-light);color:var(--green-dark);"><i class="fas fa-chart-line"></i></div>
-          <div><div class="ivr-title">Analytics Dashboard</div><div class="ivr-sub">Real-time Risk & Pricing Insights</div></div>
+
+        <!-- Right: Stats row (Row 2, Col 2 — locked to CTAs row) -->
+        <div class="hero-stats reveal" style="transition-delay:0.35s">
+          <div class="stat-item">
+            <div class="stat-val" data-count="99.9" data-suffix="%" data-decimals="1"><span class="stat-num">0.0</span><span>%</span></div>
+            <div class="stat-label">Uptime SLA Guarantee</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val" data-count="50" data-suffix="+" data-decimals="0"><span class="stat-num">0</span><span>+</span></div>
+            <div class="stat-label">Enterprise Clients</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val" data-count="3" data-suffix=" Hubs" data-decimals="0"><span class="stat-num">0</span><span> Hubs</span></div>
+            <div class="stat-label">UK, Chennai &amp; Bengaluru</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+     STRATEGIC PARTNERS & ACCREDITATIONS
+     ════════════════════════════════════════════ -->
+  <section class="section-partners" id="partners">
+    <div class="container partners-container">
+      <div class="partners-label">
+        Strategic Partners &amp; Accreditations
+      </div>
+      <div class="partner-marquee" id="partner-marquee" aria-label="Partner and Accreditation Logos">
+        <div class="marquee-track" id="marquee-track">
+          <!-- Marquee Group 1 -->
+          <div class="marquee-group">
+            <div class="partner-item" title="Miller Insurance">
+              <img src="miller.png" alt="Miller Insurance" class="partner-logo logo-miller">
+            </div>
+            <div class="partner-item" title="Linux Foundation">
+              <img src="Linux Foundation.png" alt="Linux Foundation" class="partner-logo logo-linux">
+            </div>
+            <div class="partner-item" title="Kubernetes">
+              <img src="Kubernets.png" alt="Kubernetes" class="partner-logo logo-k8s">
+            </div>
+            <div class="partner-item" title="Beazley">
+              <img src="beazley.png" alt="Beazley" class="partner-logo logo-beazley">
+            </div>
+            <div class="partner-item" title="Cloud Native Computing Foundation">
+              <img src="Cloud Native.png" alt="Cloud Native Computing Foundation" class="partner-logo logo-cncf">
+            </div>
+            <div class="partner-item" title="EVEREN">
+              <img src="everen.png" alt="EVEREN" class="partner-logo logo-everen">
+            </div>
+            <div class="partner-item" title="Medefer">
+              <img src="medefer.png" alt="Medefer" class="partner-logo logo-medefer">
+            </div>
+          </div>
+          <!-- Marquee Group 2 (duplicate for infinite seamless scroll) -->
+          <div class="marquee-group" aria-hidden="true">
+            <div class="partner-item" title="Miller Insurance">
+              <img src="miller.png" alt="Miller Insurance" class="partner-logo logo-miller">
+            </div>
+            <div class="partner-item" title="Linux Foundation">
+              <img src="Linux Foundation.png" alt="Linux Foundation" class="partner-logo logo-linux">
+            </div>
+            <div class="partner-item" title="Kubernetes">
+              <img src="Kubernets.png" alt="Kubernetes" class="partner-logo logo-k8s">
+            </div>
+            <div class="partner-item" title="Beazley">
+              <img src="beazley.png" alt="Beazley" class="partner-logo logo-beazley">
+            </div>
+            <div class="partner-item" title="Cloud Native Computing Foundation">
+              <img src="Cloud Native.png" alt="Cloud Native Computing Foundation" class="partner-logo logo-cncf">
+            </div>
+            <div class="partner-item" title="EVEREN">
+              <img src="everen.png" alt="EVEREN" class="partner-logo logo-everen">
+            </div>
+            <div class="partner-item" title="Medefer">
+              <img src="medefer.png" alt="Medefer" class="partner-logo logo-medefer">
+            </div>
+          </div>
+          <!-- Marquee Group 3 (ensures infinite coverage on 4K/wide screens) -->
+          <div class="marquee-group" aria-hidden="true">
+            <div class="partner-item" title="Miller Insurance">
+              <img src="miller.png" alt="Miller Insurance" class="partner-logo logo-miller">
+            </div>
+            <div class="partner-item" title="Linux Foundation">
+              <img src="Linux Foundation.png" alt="Linux Foundation" class="partner-logo logo-linux">
+            </div>
+            <div class="partner-item" title="Kubernetes">
+              <img src="Kubernets.png" alt="Kubernetes" class="partner-logo logo-k8s">
+            </div>
+            <div class="partner-item" title="Beazley">
+              <img src="beazley.png" alt="Beazley" class="partner-logo logo-beazley">
+            </div>
+            <div class="partner-item" title="Cloud Native Computing Foundation">
+              <img src="Cloud Native.png" alt="Cloud Native Computing Foundation" class="partner-logo logo-cncf">
+            </div>
+            <div class="partner-item" title="EVEREN">
+              <img src="everen.png" alt="EVEREN" class="partner-logo logo-everen">
+            </div>
+            <div class="partner-item" title="Medefer">
+              <img src="medefer.png" alt="Medefer" class="partner-logo logo-medefer">
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ════════════════════════════════════════════
-     CALCULATOR
+  <!-- ════════════════════════════════════════════
+     CONTEXT PLATFORM
      ════════════════════════════════════════════ -->
-<section id="calculator" class="section">
-  <div class="container">
-    <div class="calc-card reveal-scale">
-      <div class="section-header">
+  <section id="platform" class="section section-platform-white">
+    <div class="container">
+      <div class="section-header center reveal">
         <div class="section-line"></div>
-        <span class="eyebrow"><i class="fas fa-calculator"></i> Interactive Estimator</span>
-        <h2>Calculate Your Project Budget</h2>
-        <p>Select your project parameters for a real-time estimate based on VJSAR delivery metrics and industry benchmarks.</p>
+        <span class="eyebrow green"><i class="fas fa-layer-group"></i> Proprietary Platform</span>
+        <h2>The Context Suite for Enterprise Insurance</h2>
+        <p>Purpose-built software products engineering by VJSAR to transform insurance underwriting, document
+          management, and claims lifecycle.</p>
       </div>
 
-      <div class="calc-inner">
-        <div>
-          <div class="calc-group">
-            <label class="calc-label">1. Primary Service Scope</label>
-            <div class="chip-row">
-              <button class="chip selected" data-calc="scope" data-val="25000">Cloud Migration</button>
-              <button class="chip" data-calc="scope" data-val="35000">AI / ML Solution</button>
-              <button class="chip" data-calc="scope" data-val="30000">App Modernisation</button>
-              <button class="chip" data-calc="scope" data-val="20000">QA & DevOps</button>
-              <button class="chip" data-calc="scope" data-val="28000">Data Platform</button>
-            </div>
-          </div>
+      <!-- Slider wrapper -->
+      <div class="pf-slider-wrap">
+        <div class="pf-slider-viewport" id="pfViewport">
+          <div class="pf-slider-track" id="pfTrack">
 
-          <div class="calc-group">
-            <label class="calc-label">2. Team & Complexity</label>
-            <div class="chip-row">
-              <button class="chip" data-calc="size" data-val="1.0">Standard (2–3 engineers)</button>
-              <button class="chip selected" data-calc="size" data-val="1.5">Enterprise (4–6 engineers)</button>
-              <button class="chip" data-calc="size" data-val="2.2">Global Scale (8+ engineers)</button>
+            <!-- Card 1 -->
+            <div class="pf-card" data-index="0">
+              <video class="pf-card-video" src="Flowww.mp4" muted loop playsinline></video>
+              <div class="pf-card-overlay"></div>
+              <div class="pf-card-content">
+                <div class="pf-card-icon"><i class="fas fa-shield-halved"></i></div>
+                <h3 class="pf-card-title">Context Insure</h3>
+                <p class="pf-card-desc">Cited insurance records &amp; governed workflows — converting broker emails, schedules, and claims into review-ready records.</p>
+                <ul class="pf-card-features">
+                  <li><i class="fas fa-check"></i> Cited Submission &amp; Intake Records</li>
+                  <li><i class="fas fa-check"></i> Governed Underwriting Pre-Bind Gates</li>
+                  <li><i class="fas fa-check"></i> Unified Policy &amp; Coverage Tracking</li>
+                </ul>
+                <a href="https://www.context.insure/" target="_blank" class="pf-card-link">Visit context.insure <i class="fas fa-arrow-right"></i></a>
+              </div>
             </div>
-          </div>
 
-          <div class="calc-group">
-            <label class="calc-label">3. Delivery Speed</label>
-            <div class="chip-row">
-              <button class="chip" data-calc="speed" data-val="1.0">Standard Sprint Cadence</button>
-              <button class="chip selected" data-calc="speed" data-val="1.2">Accelerated Delivery</button>
+            <!-- Card 2 -->
+            <div class="pf-card" data-index="1">
+              <video class="pf-card-video" src="Flowww.mp4" muted loop playsinline></video>
+              <div class="pf-card-overlay"></div>
+              <div class="pf-card-content">
+                <div class="pf-card-icon"><i class="fas fa-folder-open"></i></div>
+                <h3 class="pf-card-title">Context DMS</h3>
+                <p class="pf-card-desc">Intelligent document management for insurance compliance, secure archiving, and rapid policy retrieval at enterprise scale.</p>
+                <ul class="pf-card-features">
+                  <li><i class="fas fa-check"></i> AI-powered OCR &amp; Document Indexing</li>
+                  <li><i class="fas fa-check"></i> Audit-Ready Compliance Vaults</li>
+                  <li><i class="fas fa-check"></i> Azure Cloud Integration</li>
+                </ul>
+                <a href="https://contextdms.com" target="_blank" class="pf-card-link">Visit contextdms.com <i class="fas fa-arrow-right"></i></a>
+              </div>
             </div>
+
+            <!-- Card 3 -->
+            <div class="pf-card" data-index="2">
+              <video class="pf-card-video" src="Flowww.mp4" muted loop playsinline></video>
+              <div class="pf-card-overlay"></div>
+              <div class="pf-card-content">
+                <div class="pf-card-icon"><i class="fas fa-clipboard-check"></i></div>
+                <h3 class="pf-card-title">Context Claim</h3>
+                <p class="pf-card-desc">AI-powered end-to-end claims lifecycle management — reducing settlement times from weeks to minutes.</p>
+                <ul class="pf-card-features">
+                  <li><i class="fas fa-check"></i> Automated FNOL Processing</li>
+                  <li><i class="fas fa-check"></i> Real-time Fraud Detection</li>
+                  <li><i class="fas fa-check"></i> Broker &amp; Policyholder Portals</li>
+                </ul>
+                <a href="https://contextclaim.com" target="_blank" class="pf-card-link">Visit contextclaim.com <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="pf-card" data-index="3">
+              <video class="pf-card-video" src="Flowww.mp4" muted loop playsinline></video>
+              <div class="pf-card-overlay"></div>
+              <div class="pf-card-content">
+                <div class="pf-card-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3 class="pf-card-title">Context Workbench</h3>
+                <p class="pf-card-desc">Low-code developer environment for rapidly building custom insurance workflows and automations without infrastructure complexity.</p>
+                <ul class="pf-card-features">
+                  <li><i class="fas fa-check"></i> Visual Workflow Builder</li>
+                  <li><i class="fas fa-check"></i> Pre-built Insurance API Connectors</li>
+                  <li><i class="fas fa-check"></i> Enterprise Role Access Control</li>
+                </ul>
+                <a href="https://contextworkbench.com" target="_blank" class="pf-card-link">Visit contextworkbench.com <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+
+          </div><!-- /pf-slider-track -->
+        </div><!-- /pf-slider-viewport -->
+
+        <!-- Navigation controls -->
+        <div class="pf-nav" id="pfNav">
+          <button class="pf-nav-btn pf-prev" id="pfPrev" aria-label="Previous"><i class="fas fa-arrow-left"></i></button>
+          <span class="pf-counter" id="pfCounter">1 / 2</span>
+          <button class="pf-nav-btn pf-next" id="pfNext" aria-label="Next"><i class="fas fa-arrow-right"></i></button>
+        </div>
+
+      </div><!-- /pf-slider-wrap -->
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+     SERVICES
+     ════════════════════════════════════════════ -->
+  <section id="services" class="section section-white">
+    <div class="container">
+      <div class="section-header reveal-left">
+        <div class="section-line"></div>
+        <span class="eyebrow"><i class="fas fa-cogs"></i> Our Capabilities</span>
+        <h2>End-to-End Enterprise IT Consulting</h2>
+        <p>Tailored technology solutions across seven core disciplines, engineered to solve complex operational
+          challenges at scale.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- 01 Cloud Adoption & Azure -->
+        <div class="service-card svc-video-card">
+          <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
+          <span class="svc-num">01</span>
+          <div class="svc-icon"><i class="fas fa-cloud"></i></div>
+          <h4 class="svc-title">Cloud Adoption &amp; Azure</h4>
+          <p class="svc-desc">Strategic cloud migration, multi-cloud architecture design, cost optimisation, and Azure
+            governance.</p>
+          <div class="svc-tags">
+            <span class="tag">Azure Migration</span>
+            <span class="tag">FinOps</span>
+            <span class="tag">Cloud Security</span>
           </div>
         </div>
 
-        <div class="calc-summary">
-          <div class="summary-label">Estimated Budget</div>
-          <div class="summary-amount" id="calc-amount">$45,000</div>
-          <div class="summary-time" id="calc-time">Estimated: 9–12 Weeks</div>
-          <button class="btn btn-accent open-modal" style="width:100%;justify-content:center;">
-            <i class="fas fa-paper-plane"></i> Request Proposal
+        <!-- 02 AI & Machine Learning -->
+        <div class="service-card svc-video-card" id="svc-ai-card">
+          <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
+          <span class="svc-num">02</span>
+          <div class="svc-icon"><i class="fas fa-brain"></i></div>
+          <h4 class="svc-title">AI &amp; Machine Learning</h4>
+          <p class="svc-desc">Generative AI integration, predictive analytics pipelines, intelligent automation, and
+            LLM-powered products.</p>
+          <div class="svc-tags">
+            <span class="tag">LLM Integration</span>
+            <span class="tag">Predictive Models</span>
+            <span class="tag">NLP</span>
+          </div>
+        </div>
+
+        <!-- 03 Application Modernisation -->
+        <div class="service-card svc-video-card">
+          <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
+          <span class="svc-num">03</span>
+          <div class="svc-icon"><i class="fas fa-code-branch"></i></div>
+          <h4 class="svc-title">App Modernisation</h4>
+          <p class="svc-desc">Refactoring legacy systems into cloud-native microservices with modern .NET Core and React
+            stacks.</p>
+          <div class="svc-tags">
+            <span class="tag">Microservices</span>
+            <span class="tag">.NET Core</span>
+            <span class="tag">React</span>
+          </div>
+        </div>
+
+        <!-- 04 Data & Analytics -->
+        <div class="service-card svc-video-card">
+          <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
+          <span class="svc-num">04</span>
+          <div class="svc-icon"><i class="fas fa-chart-bar"></i></div>
+          <h4 class="svc-title">Data &amp; Analytics</h4>
+          <p class="svc-desc">Enterprise data warehousing, real-time BI dashboards, ETL pipelines, and data governance
+            frameworks.</p>
+          <div class="svc-tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">Data Factory</span>
+            <span class="tag">ETL</span>
+          </div>
+        </div>
+
+        <!-- 05 Low Code / No Code -->
+        <div class="service-card svc-video-card">
+          <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
+          <span class="svc-num">05</span>
+          <div class="svc-icon"><i class="fas fa-cubes"></i></div>
+          <h4 class="svc-title">Low Code / No Code</h4>
+          <p class="svc-desc">Rapid application delivery with Microsoft Power Platform and custom workflow automation
+            engines.</p>
+          <div class="svc-tags">
+            <span class="tag">Power Apps</span>
+            <span class="tag">Power Automate</span>
+            <span class="tag">Rapid MVP</span>
+          </div>
+        </div>
+
+        <!-- 06 SRE & DevOps -->
+        <div class="service-card svc-video-card">
+          <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
+          <span class="svc-num">06</span>
+          <div class="svc-icon"><i class="fas fa-infinity"></i></div>
+          <h4 class="svc-title">SRE &amp; DevOps</h4>
+          <p class="svc-desc">CI/CD pipeline automation, Infrastructure as Code (Terraform), 99.99% reliability
+            engineering.</p>
+          <div class="svc-tags">
+            <span class="tag">Terraform</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">CI/CD</span>
+          </div>
+        </div>
+
+        <!-- 07 Quality Assurance & Testing -->
+        <div class="service-card svc-video-card">
+          <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
+          <span class="svc-num">07</span>
+          <div class="svc-icon"><i class="fas fa-vial"></i></div>
+          <h4 class="svc-title">Quality Assurance</h4>
+          <p class="svc-desc">Automated regression, performance load testing, security scanning, and continuous quality
+            integration.</p>
+          <div class="svc-tags">
+            <span class="tag">Selenium</span>
+            <span class="tag">Load Testing</span>
+            <span class="tag">Security Audit</span>
+          </div>
+        </div>
+
+        <!-- 08 Other Services -->
+        <div class="service-card svc-video-card">
+          <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
+          <span class="svc-num">08</span>
+          <div class="svc-icon"><i class="fas fa-shapes"></i></div>
+          <h4 class="svc-title">Other Services</h4>
+          <p class="svc-desc">Tailored enterprise IT advisory, bespoke software engineering, cybersecurity, and
+            specialized technical consulting.</p>
+          <div class="svc-tags">
+            <span class="tag">IT Advisory</span>
+            <span class="tag">Cybersecurity</span>
+            <span class="tag">Custom Dev</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+     INDUSTRIES
+     ════════════════════════════════════════════ -->
+  <section id="industries" class="section section-bg-sky">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-line"></div>
+        <span class="eyebrow"><i class="fas fa-building"></i> Industry Expertise</span>
+        <h2>Specialised Solutions for Regulated Markets</h2>
+        <p>Tailored technology frameworks built to meet strict compliance, security, and performance standards across
+          major financial and healthcare verticals.</p>
+      </div>
+
+      <div class="tab-row">
+        <button class="tab-btn active" data-industry="insurance"><i class="fas fa-shield-alt"></i> Insurance</button>
+        <button class="tab-btn" data-industry="banking"><i class="fas fa-university"></i> Banking</button>
+        <button class="tab-btn" data-industry="finance"><i class="fas fa-coins"></i> Financial Services</button>
+        <button class="tab-btn" data-industry="healthcare"><i class="fas fa-heartbeat"></i> Healthcare</button>
+      </div>
+
+      <div class="industry-panel reveal-scale">
+        <div>
+          <h3 class="ind-title" id="ind-title">Insurance & Claims Modernisation</h3>
+          <p class="ind-desc" id="ind-desc">Empowering insurers with intelligent automation, Context Claim processing,
+            legacy refactoring, and AI-assisted underwriting.</p>
+          <ul class="benefit-list" id="ind-list">
+            <li><i class="fas fa-check-circle"></i> Automated Claims Intake via Context DMS</li>
+            <li><i class="fas fa-check-circle"></i> Legacy Policy Admin Modernisation to Azure</li>
+            <li><i class="fas fa-check-circle"></i> Real-time Fraud Detection & Risk Analytics</li>
+            <li><i class="fas fa-check-circle"></i> Solvency II & FCA Compliance Architectures</li>
+          </ul>
+          <button class="btn btn-primary open-modal">
+            <i class="fas fa-arrow-right"></i> Request Industry Brief
           </button>
         </div>
+
+        <div class="ind-visual">
+          <div class="ind-visual-row">
+            <div class="ivr-icon"><i class="fas fa-file-shield"></i></div>
+            <div>
+              <div class="ivr-title">Compliance Framework</div>
+              <div class="ivr-sub">Solvency II · FCA · GDPR Ready</div>
+            </div>
+          </div>
+          <div class="ind-visual-row">
+            <div class="ivr-icon"><i class="fas fa-robot"></i></div>
+            <div>
+              <div class="ivr-title">AI Claims Automation</div>
+              <div class="ivr-sub">FNOL to Settlement in Minutes</div>
+            </div>
+          </div>
+          <div class="ind-visual-row">
+            <div class="ivr-icon"><i class="fas fa-cloud"></i></div>
+            <div>
+              <div class="ivr-title">Azure Cloud Migration</div>
+              <div class="ivr-sub">99.9% Uptime · Zero-Downtime Cutover</div>
+            </div>
+          </div>
+          <div class="ind-visual-row">
+            <div class="ivr-icon" style="background:var(--green-light);color:var(--green-dark);"><i
+                class="fas fa-chart-line"></i></div>
+            <div>
+              <div class="ivr-title">Analytics Dashboard</div>
+              <div class="ivr-sub">Real-time Risk & Pricing Insights</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ════════════════════════════════════════════
+
+
+  <!-- ════════════════════════════════════════════
      TEAM & OFFICES
      ════════════════════════════════════════════ -->
-<section id="team" class="section section-alt">
-  <div class="container">
-    <div class="section-header center reveal">
-      <div class="section-line" style="margin-inline:auto;"></div>
-      <span class="eyebrow"><i class="fas fa-users"></i> Leadership</span>
-      <h2>Guided by Industry Experts</h2>
-      <p>Decades of combined experience in financial technology, enterprise software, and global delivery management.</p>
-    </div>
-
-    <div class="team-grid reveal-stagger">
-      <div class="team-card">
-        <div class="avatar">VS</div>
-        <h4 class="team-name">Vijai Sisubalan</h4>
-        <div class="team-role">Director & Head of Finance</div>
-        <div class="team-social"><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a></div>
+  <section id="team" class="section section-bg-navy">
+    <div class="container">
+      <div class="section-header center reveal">
+        <div class="section-line" style="margin-inline:auto;"></div>
+        <span class="eyebrow"><i class="fas fa-users"></i> Leadership</span>
+        <h2>Guided by Industry Experts</h2>
+        <p>Decades of combined experience in financial technology, enterprise software, and global delivery management.
+        </p>
       </div>
 
-      <div class="team-card">
-        <div class="avatar">S</div>
-        <h4 class="team-name">Saritha</h4>
-        <div class="team-role">Non-Executive Director</div>
-        <div class="team-social"><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a></div>
-      </div>
+      <div class="team-grid reveal-stagger">
+        <div class="team-card">
+          <div class="avatar">VS</div>
+          <h4 class="team-name">Vijai Sisubalan</h4>
+          <div class="team-role">Director & Head of Finance</div>
+          <div class="team-social"><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
 
-      <div class="team-card">
-        <div class="avatar">SC</div>
-        <h4 class="team-name">Subash Chakarapani</h4>
-        <div class="team-role">Head of Operation & Delivery</div>
-        <div class="team-social"><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a></div>
-      </div>
+        <div class="team-card">
+          <div class="avatar">S</div>
+          <h4 class="team-name">Saritha</h4>
+          <div class="team-role">Non-Executive Director</div>
+          <div class="team-social"><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
 
-      <div class="team-card">
-        <div class="avatar">AB</div>
-        <h4 class="team-name">Abdul Baruwa</h4>
-        <div class="team-role">Head of Technology</div>
-        <div class="team-social"><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a></div>
-      </div>
-    </div>
+        <div class="team-card">
+          <div class="avatar">SC</div>
+          <h4 class="team-name">Subash Chakarapani</h4>
+          <div class="team-role">Head of Operation & Delivery</div>
+          <div class="team-social"><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
 
-    <!-- Offices -->
-    <div class="section-header center" style="margin-top:4.5rem;">
-      <span class="eyebrow"><i class="fas fa-globe"></i> Global Footprint</span>
-      <h2>Our Delivery Centres</h2>
-    </div>
-
-    <div class="offices-grid">
-      <div class="office-card">
-        <div class="office-flag"><i class="fas fa-flag"></i></div>
-        <div class="office-country">United Kingdom (HQ)</div>
-        <div class="office-city">London / Wallington</div>
-        <p class="office-address">VJSAR Solutions Ltd.<br>Wallington, Greater London<br>United Kingdom</p>
-      </div>
-
-      <div class="office-card">
-        <div class="office-flag"><i class="fas fa-flag"></i></div>
-        <div class="office-country">India (ODC)</div>
-        <div class="office-city">Chennai</div>
-        <p class="office-address">Offshore Delivery Centre<br>IT Corridor, OMR, Chennai<br>Tamil Nadu, India</p>
-      </div>
-
-      <div class="office-card">
-        <div class="office-flag"><i class="fas fa-flag"></i></div>
-        <div class="office-country">India (ODC)</div>
-        <div class="office-city">Bengaluru</div>
-        <p class="office-address">Technology Hub<br>Outer Ring Road, Bengaluru<br>Karnataka, India</p>
+        <div class="team-card">
+          <div class="avatar">AB</div>
+          <h4 class="team-name">Abdul Baruwa</h4>
+          <div class="team-role">Head of Technology</div>
+          <div class="team-social"><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ════════════════════════════════════════════
+  <!-- ════════════════════════════════════════════
      MODAL
      ════════════════════════════════════════════ -->
-<div class="modal-overlay" id="contact-modal">
-  <div class="modal-box">
-    <button class="modal-close" id="modal-close"><i class="fas fa-times"></i></button>
+  <div class="modal-overlay" id="contact-modal">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close"><i class="fas fa-times"></i></button>
 
-    <h3 class="modal-title">Book a Consultation</h3>
-    <p class="modal-subtitle">A senior VJSAR solution architect will respond within one business day.</p>
+      <h3 class="modal-title">Contact Us</h3>
+      <p class="modal-subtitle">A senior VJSAR solution architect will respond within one business day.</p>
 
-    <form id="contact-form">
-      <div class="form-row">
-        <div class="form-group">
-          <input class="form-input" type="text" placeholder="First Name *" required>
+      <form id="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <input class="form-input" type="text" placeholder="First Name *" required>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="text" placeholder="Last Name *" required>
+          </div>
         </div>
         <div class="form-group">
-          <input class="form-input" type="text" placeholder="Last Name *" required>
+          <input class="form-input" type="email" placeholder="Work Email Address *" required>
         </div>
-      </div>
-      <div class="form-group">
-        <input class="form-input" type="email" placeholder="Work Email Address *" required>
-      </div>
-      <div class="form-group">
-        <input class="form-input" type="text" placeholder="Company Name">
-      </div>
-      <div class="form-group">
-        <textarea class="form-textarea" placeholder="Tell us about your project requirements..."></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
-        <i class="fas fa-paper-plane"></i> Submit Request
-      </button>
-    </form>
+        <div class="form-group">
+          <input class="form-input" type="text" placeholder="Company Name">
+        </div>
+        <div class="form-group">
+          <textarea class="form-textarea" placeholder="Tell us about your project requirements..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+          <i class="fas fa-paper-plane"></i> Submit Request
+        </button>
+      </form>
+    </div>
   </div>
-</div>
 
-<!-- ════════════════════════════════════════════
+  <!-- ════════════════════════════════════════════
      FOOTER
      ════════════════════════════════════════════ -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand-name">VJSAR</div>
-        <div class="footer-tagline">Committed to Excellence</div>
-        <p class="footer-desc">London-headquartered IT solutions provider delivering enterprise cloud transformation, AI solutions, and the proprietary Context Insurance Suite.</p>
+  <footer class="footer site-footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <!-- Logo: Real mark image LEFT + Real wordmark image RIGHT (matches header lockup) -->
+          <a href="#" class="footer-brand-logo" aria-label="VJSAR Home">
+            <img src="logo-mark.png?v=2" alt="VJSAR logo mark" class="footer-logo-mark-img" />
+            <img src="logo-wordmark.png?v=2" alt="VJSAR — Committed to Excellence" class="footer-logo-wordmark-img" />
+          </a>
+          <p class="footer-desc">London-headquartered IT solutions provider delivering enterprise cloud transformation,
+            AI solutions, and the proprietary Context Insurance Suite.</p>
+
+          <div class="footer-direct-contact">
+            <a href="tel:+442087737662" class="footer-contact-item">
+              <i class="fas fa-phone-alt"></i> +44 208 773 7662
+            </a>
+            <a href="mailto:info@vjsar.com" class="footer-contact-item">
+              <i class="fas fa-envelope"></i> info@vjsar.com
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">
+            <span>Solutions</span>
+          </div>
+          <ul class="footer-links">
+            <li><a href="#services"><i class="fas fa-cloud"></i> Cloud Adoption & Azure</a></li>
+            <li><a href="#services"><i class="fas fa-brain"></i> AI & Machine Learning</a></li>
+            <li><a href="#services"><i class="fas fa-code-branch"></i> App Modernisation</a></li>
+            <li><a href="#services"><i class="fas fa-chart-bar"></i> Data & Analytics</a></li>
+            <li><a href="#services"><i class="fas fa-infinity"></i> SRE & DevOps</a></li>
+            <li><a href="#services"><i class="fas fa-vial"></i> Quality Assurance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">
+            <span>Context Platform</span>
+          </div>
+          <ul class="footer-links">
+            <li><a href="https://www.context.insure/" target="_blank">Context Insure <i
+                  class="fas fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
+            <li><a href="https://contextdms.com" target="_blank">Context DMS <i
+                  class="fas fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
+            <li><a href="https://contextclaim.com" target="_blank">Context Claim <i
+                  class="fas fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
+            <li><a href="https://contextworkbench.com" target="_blank">Context Workbench <i
+                  class="fas fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">
+            <span>Company</span>
+          </div>
+          <ul class="footer-links">
+            <li><a href="#team"><i class="fas fa-users"></i> Leadership</a></li>
+            <li><a href="#industries"><i class="fas fa-building"></i> Industries</a></li>
+            <li><a href="#calculator"><i class="fas fa-calculator"></i> Project Estimator</a></li>
+            <li><a href="#platform"><i class="fas fa-layer-group"></i> The Context Suite</a></li>
+            <li><a href="mailto:info@vjsar.com" class="footer-highlight-link"><i class="fas fa-envelope"></i>
+                info@vjsar.com</a></li>
+          </ul>
+        </div>
       </div>
 
-      <div>
-        <div class="footer-col-title">Solutions</div>
-        <ul class="footer-links">
-          <li><a href="#services">Cloud Adoption & Azure</a></li>
-          <li><a href="#services">AI & Machine Learning</a></li>
-          <li><a href="#services">App Modernisation</a></li>
-          <li><a href="#services">Data & Analytics</a></li>
-          <li><a href="#services">SRE & DevOps</a></li>
-          <li><a href="#services">Quality Assurance</a></li>
-        </ul>
+      <!-- ── FOOTER OFFICES / GLOBAL FOOTPRINT (Clean, Decent, Corporate) ── -->
+      <div class="footer-offices-section" id="global-footprint">
+        <div class="footer-footprint-container">
+          <!-- Left side: Global Footprint intro & Contact Us -->
+          <div class="footer-footprint-left">
+            <span class="footprint-eyebrow">WORLDWIDE PRESENCE</span>
+            <h3 class="footprint-heading">Our Global Footprint</h3>
+            <p class="footprint-desc">
+              With offices across the UK and India, VJSAR delivers local expertise with global reach &mdash; ensuring
+              you always have a trusted partner close by.
+            </p>
+
+            <div class="footprint-cta-block">
+              <div class="footprint-cta-prompt">Ready to discuss your project?</div>
+              <p class="footprint-cta-sub">Our enterprise architects are available to discuss your project from their
+                nearest location.</p>
+              <button class="footprint-contact-btn open-modal" type="button">
+                <span>Contact Our Team</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right side: 2 on top, 2 below (2x2 grid) -->
+          <div class="footer-offices-grid-2x2">
+            <!-- Row 1: Top 2 -->
+            <!-- 1. UK Office -->
+            <div class="footer-office-col">
+              <div class="office-col-heading">UK OFFICE</div>
+              <a href="https://www.google.com/maps/search/?api=1&query=Sutton+Business+Centre+Restmor+Way+Wallington+SM6+7AH+UK"
+                target="_blank" rel="noopener noreferrer" class="office-location-link"
+                title="Open UK Office in Google Maps">
+                <div class="office-header-item">
+                  <i class="fas fa-location-dot office-pin-icon"></i>
+                  <span class="office-company-name">VJSAR Consultant Services Ltd <i
+                      class="fas fa-arrow-up-right-from-square office-ext-icon"></i></span>
+                </div>
+                <p class="office-address-lines">
+                  Sutton Business Centre House,<br>
+                  Restmor Way, Wallington, SM6 7AH,<br>
+                  United Kingdom
+                </p>
+              </a>
+              <div class="office-phone-line">
+                <a href="tel:+442087737662">Phone: +44 208 773 7662</a>
+              </div>
+            </div>
+
+            <!-- 2. London Delivery Hub -->
+            <div class="footer-office-col">
+              <div class="office-col-heading">LONDON DELIVERY HUB</div>
+              <a href="https://www.google.com/maps/search/?api=1&query=WeWork+The+Monument+51+Eastcheap+London+EC3M+1DT"
+                target="_blank" rel="noopener noreferrer" class="office-location-link"
+                title="Open London Hub in Google Maps">
+                <div class="office-header-item">
+                  <i class="fas fa-location-dot office-pin-icon"></i>
+                  <span class="office-company-name">London Delivery Hub <i
+                      class="fas fa-arrow-up-right-from-square office-ext-icon"></i></span>
+                </div>
+                <p class="office-address-lines">
+                  WeWork The Monument, 51 Eastcheap,<br>
+                  London EC3M 1DT,<br>
+                  United Kingdom
+                </p>
+              </a>
+              <div class="office-phone-line">
+                <a href="tel:+442087737662">Phone: +44 208 773 7662</a>
+              </div>
+            </div>
+
+            <!-- Row 2: Bottom 2 -->
+            <!-- 3. ODC - Chennai -->
+            <div class="footer-office-col">
+              <div class="office-col-heading">ODC &ndash; CHENNAI</div>
+              <a href="https://www.google.com/maps/search/?api=1&query=TECCI+PARK+173+Old+Mahabalipuram+Road+Sholinganallur+Chennai+600119"
+                target="_blank" rel="noopener noreferrer" class="office-location-link"
+                title="Open Chennai ODC in Google Maps">
+                <div class="office-header-item">
+                  <i class="fas fa-location-dot office-pin-icon"></i>
+                  <span class="office-company-name">VJSAR Info Tech Private Ltd <i
+                      class="fas fa-arrow-up-right-from-square office-ext-icon"></i></span>
+                </div>
+                <p class="office-address-lines">
+                  7th Floor, Cactus Coworking, Block B,<br>
+                  TECCI PARK, 173 Old Mahabalipuram Road,<br>
+                  Sholinganallur, Chennai 600119, India
+                </p>
+              </a>
+              <div class="office-phone-line">
+                <a href="tel:+918122546633">Phone: +91 81225 46633</a>
+              </div>
+            </div>
+
+            <!-- 4. ODC - Bengaluru -->
+            <div class="footer-office-col">
+              <div class="office-col-heading">ODC &ndash; BENGALURU</div>
+              <a href="https://www.google.com/maps/search/?api=1&query=Manayata+Tech+Park+Nagavara+Bengaluru+Karnataka+560045"
+                target="_blank" rel="noopener noreferrer" class="office-location-link"
+                title="Open Bengaluru ODC in Google Maps">
+                <div class="office-header-item">
+                  <i class="fas fa-location-dot office-pin-icon"></i>
+                  <span class="office-company-name">VJSAR Info Tech Private Ltd <i
+                      class="fas fa-arrow-up-right-from-square office-ext-icon"></i></span>
+                </div>
+                <p class="office-address-lines">
+                  Regus, 16th Floor, MSR North,<br>
+                  MS Ramaiah North City, Manayata Tech Park,<br>
+                  Nagavara, Bengaluru, Karnataka 560045
+                </p>
+              </a>
+              <div class="office-phone-line">
+                <a href="tel:+918042764561">Phone: +91 80 4276 4561</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div>
-        <div class="footer-col-title">Context Platform</div>
-        <ul class="footer-links">
-          <li><a href="https://contextdms.com" target="_blank">Context DMS</a></li>
-          <li><a href="https://contextclaim.com" target="_blank">Context Claim</a></li>
-          <li><a href="https://contextworkbench.com" target="_blank">Context Workbench</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="footer-col-title">Company</div>
-        <ul class="footer-links">
-          <li><a href="#team">Leadership</a></li>
-          <li><a href="#industries">Industries</a></li>
-          <li><a href="#calculator">Project Estimator</a></li>
-          <li><a href="#platform">The Context Suite</a></li>
-          <li><a href="mailto:info@vjsar.com">info@vjsar.com</a></li>
-        </ul>
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          <span>&copy; 2026 VJSAR Solutions Ltd. All rights reserved.</span>
+          <span class="footer-copy-sub">Enterprise Engineering & AI Transformation &bull; London &bull; Chennai &bull;
+            Bengaluru</span>
+        </div>
+        <div class="footer-bottom-right">
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <span class="footer-sep">&bull;</span>
+            <a href="#">Terms of Use</a>
+            <span class="footer-sep">&bull;</span>
+            <a href="#">Security</a>
+          </div>
+          <div class="footer-social-group">
+            <a href="https://linkedin.com" target="_blank" class="footer-social-btn" aria-label="LinkedIn"><i
+                class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:info@vjsar.com" class="footer-social-btn" aria-label="Email"><i
+                class="fas fa-envelope"></i></a>
+            <a href="#hero" class="footer-social-btn scroll-top-btn" aria-label="Back to top" title="Back to top"><i
+                class="fas fa-arrow-up"></i></a>
+          </div>
+        </div>
       </div>
     </div>
+  </footer>
 
-    <div class="footer-bottom">
-      <span>&copy; 2026 VJSAR Solutions Ltd. All rights reserved.</span>
-      <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
-        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      </div>
-    </div>
-  </div>
-</footer>
+  <script src="app.js?v=11"></script>
+  <script>
+    /* ── Cloud Adoption card video play/pause on hover ── */
+    (function () {
+      document.querySelectorAll('.svc-video-card').forEach(card => {
+        const video = card.querySelector('.svc-bg-video');
+        if (!video) return;
 
-<script src="app.js"></script>
-<script>
-  /* ── Cloud Adoption card video play/pause on hover ── */
-  (function () {
-    const card = document.querySelector('.svc-video-card');
-    const video = card && card.querySelector('.svc-bg-video');
-    if (!card || !video) return;
+        card.addEventListener('mouseenter', () => {
+          video.currentTime = 0;
+          video.play().catch(() => { });
+        });
 
-    card.addEventListener('mouseenter', () => {
-      video.currentTime = 0;
-      video.play().catch(() => {});   // catch autoplay policy errors silently
-    });
+        card.addEventListener('mouseleave', () => {
+          video.pause();
+        });
+      });
 
-    card.addEventListener('mouseleave', () => {
-      video.pause();
-    });
-  })();
-</script>
+      /* ── Hero background video: 1.5s initial delay after reload ── */
+      const heroVid = document.querySelector('.hero-bg-video');
+      if (heroVid) {
+        setTimeout(() => {
+          heroVid.currentTime = 0;
+          heroVid.play().catch(() => { });
+          heroVid.classList.add('is-visible');
+        }, 1500);
+      }
+    })();
+  </script>
 </body>
+
 </html>
