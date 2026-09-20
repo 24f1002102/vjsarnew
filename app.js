@@ -11,11 +11,14 @@ function initApp() {
   initRotator();
   initCommentTypewriter();
   initIndustryTabs();
+  initIndustryFlowchartScroll();
   initCalculator();
   initModal();
   initPartnerMarquee();
   initStatCounters();
   initPlatformSlider();
+  initCapabilitiesScrollGrid();
+  initLeadershipSpotlight();
 }
 
 if (document.readyState === 'loading') {
@@ -71,6 +74,36 @@ function initNavbar() {
 
   // Run once on load in case page is already scrolled (e.g. browser restore)
   applyNavProgress();
+
+  // ── Mobile Navigation Toggle ──
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  if (mobileToggle && navLinks) {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navLinks.classList.toggle('mobile-open');
+      mobileToggle.setAttribute('aria-expanded', isOpen);
+      mobileToggle.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+
+    // Close mobile menu when clicking any nav link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('mobile-open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    // Close when clicking outside navbar
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && navLinks.classList.contains('mobile-open')) {
+        navLinks.classList.remove('mobile-open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+      }
+    });
+  }
 }
 
 /* ─────────────────────────────────────────────────────────
@@ -251,137 +284,599 @@ function initRotator() {
 }
 
 /* ─────────────────────────────────────────────────────────
-   6. Industry Tabs
+   6. Industry Tabs — Enterprise Bento Cockpit Engine
+   Apple-style sliding indicator, 4-tier asymmetric Bento matrix,
+   animated pipeline flow, and Linear cursor spotlight
    ───────────────────────────────────────────────────────── */
 function initIndustryTabs() {
   const data = {
     insurance: {
+      domainBadge: '<i class="fas fa-shield-halved"></i> Mission-Critical Insurance',
       title: 'Insurance & Claims Modernisation',
-      desc: 'Empowering insurers with intelligent automation, Context Claim processing, legacy refactoring, and AI-assisted underwriting.',
-      benefits: [
-        'Automated Claims Intake via Context DMS',
-        'Legacy Policy Admin Modernisation to Azure',
-        'Real-time Fraud Detection & Risk Analytics',
-        'Solvency II & FCA Compliance Architectures'
+      desc: 'Empowering Lloyd\'s syndicates, global MGAs, and tier-1 carriers with intelligent automation, Context Claim processing, legacy refactoring, and AI-assisted underwriting.',
+      pipeline: [
+        { step: '01 Ingest', icon: 'fa-inbox', title: 'Broker Intake', sub: 'Context DMS Email & Schedules' },
+        { step: '02 Core Engine', icon: 'fa-brain', title: 'AI Clause Matching', sub: 'Automated Risk & FNOL Triage', active: true },
+        { step: '03 Governed Gate', icon: 'fa-shield-check', title: 'Pre-Bind Approval', sub: 'Solvency II & Lloyd\'s Gate' }
       ],
-      rows: [
-        { icon: 'fa-file-shield', title: 'Compliance Framework', sub: 'Solvency II · FCA · GDPR Ready' },
-        { icon: 'fa-robot', title: 'AI Claims Automation', sub: 'FNOL to Settlement in Minutes' },
-        { icon: 'fa-cloud', title: 'Azure Cloud Migration', sub: '99.9% Uptime · Zero-Downtime Cutover' },
-        { icon: 'fa-chart-line', title: 'Analytics Dashboard', sub: 'Real-time Risk & Pricing Insights', green: true }
+      benefits: [
+        'Automated Claims Intake via Context DMS & Context Claim',
+        'Legacy Policy Admin Modernisation to Azure Cloud',
+        'Real-time Fraud Detection & Actuarial Risk Analytics',
+        'Solvency II & FCA Compliance Support with Full Audit Lineage'
+      ],
+      cta: 'Request Industry Brief',
+      govHeading: 'Compliance Alignment',
+      govSub: 'Controls & Governance Posture',
+      govBadge: 'Programme in Progress',
+      chips: [
+        { text: "Lloyd's — Market Ready", cls: 'chip-green', icon: 'fa-shield-halved' },
+        { text: 'ISO 27001 — Control Aligned', cls: 'chip-blue', icon: 'fa-sliders' },
+        { text: 'SOC 2 — Designed For', cls: 'chip-cyan', icon: 'fa-drafting-compass' },
+        { text: 'GDPR — Residency Ready', cls: 'chip-navy', icon: 'fa-database' }
+      ],
+      sovText: '100% UK & EU Boundary Enclaves · Built to Support Solvency II & FCA Reporting',
+      stat1: { num: '98%', label: 'ACORD & FNOL Confidence' },
+      stat2: { num: '<2s', label: 'Average AI Extraction' },
+      statNote: '33% treaty claims processed via straight-through processing (STP)',
+      techTags: [
+        { text: 'Context Insure', cls: 'tag-blue' },
+        { text: 'Azure OpenAI', cls: 'tag-purple' },
+        { text: 'Context DMS', cls: 'tag-cyan' },
+        { text: 'Power Platform', cls: 'tag-green' },
+        { text: 'Azure Kubernetes', cls: 'tag-navy' }
       ]
     },
     banking: {
+      domainBadge: '<i class="fas fa-university"></i> Tier-1 Core Banking',
       title: 'Banking & Core Financial Platforms',
-      desc: 'Accelerating digital banking with microservices, open banking APIs, and high-frequency transaction security.',
-      benefits: [
-        'Secure Open Banking API Integration',
-        'Core Banking App Modernisation (zero downtime)',
-        'SRE & 99.999% Reliability for Critical Systems',
-        'Real-time AML & Compliance Monitoring'
+      desc: 'Accelerating digital retail and corporate banking with cloud-native microservices, open banking APIs, and high-frequency transaction security.',
+      pipeline: [
+        { step: '01 Ingest', icon: 'fa-exchange-alt', title: 'Open Banking APIs', sub: 'PSD2 & BACS Live Ingestion' },
+        { step: '02 Core Engine', icon: 'fa-network-wired', title: 'Event Sourcing Core', sub: 'Kafka & AKS Microservices', active: true },
+        { step: '03 Governed Gate', icon: 'fa-lock', title: 'Zero-Trust Gate', sub: 'mTLS & Real-time AML Engine' }
       ],
-      rows: [
-        { icon: 'fa-lock', title: 'API Security Layer', sub: 'OAuth2 · mTLS · Zero Trust' },
-        { icon: 'fa-exchange-alt', title: 'Open Banking APIs', sub: 'PSD2 Compliant Integration' },
-        { icon: 'fa-database', title: 'Core Systems Refactor', sub: 'Microservices · Event Sourcing' },
-        { icon: 'fa-chart-pie', title: 'AML Analytics', sub: 'Real-time Transaction Monitoring', green: true }
+      benefits: [
+        'Secure Open Banking API Integration with OAuth2 & mTLS',
+        'Core Banking App Modernisation with Zero-Downtime Cutover',
+        'SRE & High-Availability Reliability for Critical Transaction Engines',
+        'Real-time AML & Fraud Surveillance with Instant Alerts'
+      ],
+      cta: 'Request Banking Architecture Brief',
+      govHeading: 'Banking Governance & Resilience',
+      govSub: 'Regulatory Framework Alignment',
+      govBadge: 'Architecture Aligned',
+      chips: [
+        { text: 'Open Banking — Directory Aligned', cls: 'chip-green', icon: 'fa-building-columns' },
+        { text: 'mTLS & OAuth 2.0 — Zero Trust', cls: 'chip-blue', icon: 'fa-lock' },
+        { text: 'PRA SS1/21 — Resilience Ready', cls: 'chip-cyan', icon: 'fa-shield-halved' },
+        { text: 'BCBS 239 — Lineage Framework', cls: 'chip-navy', icon: 'fa-diagram-project' }
+      ],
+      sovText: 'Sovereign UK Banking Mesh · HSM Key Enclaves & Client Isolation',
+      stat1: { num: '99.99%', label: 'Platform SLA Target' },
+      stat2: { num: '<45ms', label: 'P95 API Response Time' },
+      statNote: 'Benchmarked across Azure UK-South distributed API gateway clusters',
+      techTags: [
+        { text: 'Azure Kubernetes', cls: 'tag-navy' },
+        { text: 'Terraform IaC', cls: 'tag-purple' },
+        { text: 'Kafka Streams', cls: 'tag-blue' },
+        { text: 'Redis Cache', cls: 'tag-green' },
+        { text: 'Azure Key Vault', cls: 'tag-cyan' }
       ]
     },
     finance: {
+      domainBadge: '<i class="fas fa-coins"></i> Capital Markets & Asset Management',
       title: 'Financial Services & Asset Management',
-      desc: 'Transforming wealth management and enterprise reporting with scalable cloud data pipelines.',
-      benefits: [
-        'High-Speed Data Pipelines for Market Analytics',
-        'Automated Financial Compliance & Audit Logging',
-        'Low-Code Portals for Portfolio Managers',
-        'Multi-Cloud DR & Security Assurance'
+      desc: 'Transforming wealth management, institutional trading, and regulatory reporting with high-speed data pipelines and scalable cloud architecture.',
+      pipeline: [
+        { step: '01 Ingest', icon: 'fa-chart-line', title: 'Market Feeds', sub: 'Fix Engine & LSE Tick Data' },
+        { step: '02 Core Engine', icon: 'fa-server', title: 'Databricks Delta Lake', sub: 'Azure Synapse Data Engineering', active: true },
+        { step: '03 Governed Gate', icon: 'fa-balance-scale', title: 'Audit Trail Gate', sub: 'Immutable Ledger & MiFID II Ready' }
       ],
-      rows: [
-        { icon: 'fa-server', title: 'Data Engineering', sub: 'Azure Data Factory · Databricks' },
-        { icon: 'fa-chart-bar', title: 'BI Reporting', sub: 'Power BI · Real-time Dashboards' },
-        { icon: 'fa-balance-scale', title: 'Compliance Automation', sub: 'MiFID II · GDPR · SOX Ready' },
-        { icon: 'fa-shield-alt', title: 'DR & Resilience', sub: 'Multi-Cloud Failover Strategy', green: true }
+      benefits: [
+        'High-Speed Data Pipelines for Real-time Market Analytics',
+        'Automated Reporting Frameworks Supporting MiFID II & SOX Compliance',
+        'Low-Code Executive Dashboards with Microsoft Power BI',
+        'Multi-Cloud Disaster Recovery & 15-Minute RPO/RTO Targets'
+      ],
+      cta: 'Request Capital Markets Brief',
+      govHeading: 'Capital Markets Compliance',
+      govSub: 'Client Regulatory & Audit Support',
+      govBadge: 'Framework Aligned',
+      chips: [
+        { text: 'MiFID II — Reporting Automation', cls: 'chip-green', icon: 'fa-scale-balanced' },
+        { text: 'SOC 2 — Controls Aligned', cls: 'chip-blue', icon: 'fa-drafting-compass' },
+        { text: 'SOX Sec. 404 — ITGC Support', cls: 'chip-cyan', icon: 'fa-file-invoice-dollar' },
+        { text: 'FCA Consumer Duty — Data Ready', cls: 'chip-navy', icon: 'fa-handshake' }
+      ],
+      sovText: 'Immutable WORM Audit Storage · Built for Institutional Compliance',
+      stat1: { num: '100%', label: 'Immutable Audit Lineage' },
+      stat2: { num: '<15min', label: 'Cross-Region Failover RTO' },
+      statNote: 'Production architecture for automated transaction reconciliation',
+      techTags: [
+        { text: 'Azure Synapse', cls: 'tag-blue' },
+        { text: 'Databricks', cls: 'tag-purple' },
+        { text: 'Power BI Pro', cls: 'tag-green' },
+        { text: 'Azure SQL MI', cls: 'tag-navy' },
+        { text: 'Event Hubs', cls: 'tag-cyan' }
       ]
     },
     healthcare: {
-      title: 'Healthcare & Life Sciences Tech',
-      desc: 'Delivering HIPAA-compliant cloud architectures, patient record digitisation, and secure clinical data integration.',
-      benefits: [
-        'HIPAA & GDPR Compliant Cloud Data Vaults',
-        'EHR/EMR System Integration & Interoperability APIs',
-        'AI-Driven Predictive Diagnostics & Analytics',
-        'Automated QA & Security for HealthTech Apps'
+      domainBadge: '<i class="fas fa-heartbeat"></i> HealthTech & Life Sciences',
+      title: 'Healthcare & Clinical Tech Systems',
+      desc: 'Delivering NHS and HIPAA-aligned cloud architectures, patient record digitisation, and secure clinical data interoperability for healthcare trusts and HealthTech innovators.',
+      pipeline: [
+        { step: '01 Ingest', icon: 'fa-hospital-user', title: 'Clinical Intake', sub: 'EHR / EMR & HL7 FHIR Stream' },
+        { step: '02 Core Engine', icon: 'fa-stethoscope', title: 'Clinical AI Engine', sub: 'Predictive Triage & OCR Diagnostics', active: true },
+        { step: '03 Governed Gate', icon: 'fa-lock', title: 'Security Enclave', sub: 'FIPS 140-2 Key Vault & BAA Ready' }
       ],
-      rows: [
-        { icon: 'fa-hospital', title: 'EHR Integration', sub: 'HL7 FHIR · DICOM Standards' },
-        { icon: 'fa-stethoscope', title: 'Clinical AI Models', sub: 'Diagnostic & Risk Prediction' },
-        { icon: 'fa-lock', title: 'HIPAA Data Vault', sub: 'End-to-End Encryption at Rest' },
-        { icon: 'fa-microscope', title: 'HealthTech QA', sub: 'FDA-Grade Testing Pipelines', green: true }
+      benefits: [
+        'NHS DSP Toolkit Aligned Cloud Architecture & Encryption at Rest',
+        'EHR/EMR Interoperability via HL7 FHIR & DICOM Standards',
+        'AI-Assisted Predictive Medical Document Triage',
+        'Continuous Vulnerability Scanning & Healthcare DevSecOps Pipelines'
+      ],
+      cta: 'Request Healthcare Solution Brief',
+      govHeading: 'HealthTech Security & Standards',
+      govSub: 'Clinical Governance & Data Protection',
+      govBadge: 'Standards Met',
+      chips: [
+        { text: 'NHS DSP Toolkit — Standards Met', cls: 'chip-green', icon: 'fa-circle-check' },
+        { text: 'HIPAA — Security Rule Architecture', cls: 'chip-blue', icon: 'fa-hospital-user' },
+        { text: 'HL7 FHIR — Interoperability', cls: 'chip-cyan', icon: 'fa-network-wired' },
+        { text: 'ISO 27001 — Controls Aligned', cls: 'chip-navy', icon: 'fa-sliders' }
+      ],
+      sovText: 'Zero-Trust Patient Data Isolation · 256-Bit Encrypted Data Residency',
+      stat1: { num: '256-bit', label: 'AES Encryption (Rest/Transit)' },
+      stat2: { num: 'HL7/FHIR', label: 'Clinical Data Standard' },
+      statNote: 'Supplier self-assessment aligned to NHS Digital Data Security Standards',
+      techTags: [
+        { text: 'Azure Health Data', cls: 'tag-blue' },
+        { text: 'FHIR Converter', cls: 'tag-cyan' },
+        { text: 'Cognitive Services', cls: 'tag-purple' },
+        { text: 'Azure Key Vault', cls: 'tag-navy' },
+        { text: 'DICOM Service', cls: 'tag-green' }
       ]
     }
   };
 
-  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabContainer = document.getElementById('bentoTabBar');
+  const indicator = document.getElementById('bentoTabIndicator');
+  const tabBtns = document.querySelectorAll('.bento-tab-btn');
+  const bentoGrid = document.getElementById('bentoCockpitGrid');
+
+  // DOM Elements to update
+  const domainBadge = document.getElementById('bento-domain-badge');
   const indTitle = document.getElementById('ind-title');
   const indDesc = document.getElementById('ind-desc');
   const indList = document.getElementById('ind-list');
+  const pipelineEl = document.getElementById('bento-pipeline');
+  const chipsEl = document.getElementById('bento-compliance-chips');
+  const govHeading = document.getElementById('bento-gov-heading');
+  const govSub = document.getElementById('bento-gov-sub');
+  const govBadge = document.getElementById('bento-gov-badge');
+  const sovDesc = document.getElementById('bento-sov-desc');
+  const stat1Num = document.getElementById('bento-stat1-num');
+  const stat1Lbl = document.getElementById('bento-stat1-label');
+  const stat2Num = document.getElementById('bento-stat2-num');
+  const stat2Lbl = document.getElementById('bento-stat2-label');
+  const statNote = document.getElementById('bento-stat-note');
+  const techStackEl = document.getElementById('bento-tech-stack');
+  const ctaBtn = document.getElementById('bento-cta-btn');
 
+  // ── Apple-Style Sliding Indicator Position ──
+  function updateIndicator(btn) {
+    if (!indicator || !btn || !tabContainer) return;
+    if (window.innerWidth <= 768) return; // Fallback to button highlight on mobile grid
+    const btnRect = btn.getBoundingClientRect();
+    const containerRect = tabContainer.getBoundingClientRect();
+    const leftOffset = btnRect.left - containerRect.left;
+    indicator.style.transform = `translateX(${leftOffset}px)`;
+    indicator.style.width = `${btnRect.width}px`;
+  }
+
+  // Initial indicator positioning
+  const activeBtn = document.querySelector('.bento-tab-btn.active');
+  if (activeBtn) {
+    requestAnimationFrame(() => updateIndicator(activeBtn));
+  }
+
+  // Recalculate indicator on resize
+  window.addEventListener('resize', () => {
+    const currentActive = document.querySelector('.bento-tab-btn.active');
+    if (currentActive) updateIndicator(currentActive);
+  });
+
+  // ── Tab Switching & Staggered Recalibration ──
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      tabBtns.forEach(b => b.classList.remove('active'));
+      if (btn.classList.contains('active')) return;
+
+      tabBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      updateIndicator(btn);
 
       const key = btn.dataset.industry;
       const d = data[key];
       if (!d) return;
 
-      const panel = document.querySelector('.industry-panel');
-      if (panel) {
-        panel.style.opacity = '0';
-        panel.style.transform = 'translateY(12px)';
-      }
+      const tiles = document.querySelectorAll('.bento-tile');
+
+      // Staggered micro-fade out
+      tiles.forEach((tile) => {
+        tile.style.transition = 'opacity 0.18s ease, transform 0.18s ease';
+        tile.style.opacity = '0.35';
+        tile.style.transform = 'translateY(6px)';
+      });
 
       setTimeout(() => {
+        // 1. Update Hero Tile Content
+        if (domainBadge) domainBadge.innerHTML = d.domainBadge;
         if (indTitle) indTitle.textContent = d.title;
         if (indDesc) indDesc.textContent = d.desc;
+        if (ctaBtn) ctaBtn.innerHTML = `<i class="fas fa-arrow-right"></i> ${d.cta}`;
+
         if (indList) {
           indList.innerHTML = d.benefits.map(b =>
             `<li><i class="fas fa-check-circle"></i> ${b}</li>`
           ).join('');
         }
 
-        const visual = document.querySelector('.ind-visual');
-        if (visual) {
-          visual.innerHTML = d.rows.map(r => `
-            <div class="ind-visual-row">
-              <div class="ivr-icon${r.green ? '" style="background:var(--green-light);color:var(--green-dark);' : ''}">
-                <i class="fas ${r.icon}"></i>
+        // 2. Update Pipeline Nodes
+        if (pipelineEl && d.pipeline) {
+          pipelineEl.innerHTML = d.pipeline.map((p, idx) => `
+            <div class="pipeline-step${p.active ? ' active-step' : ''}">
+              <div class="step-badge">${p.step}</div>
+              <div class="step-icon"><i class="fas ${p.icon}"></i></div>
+              <div class="step-title">${p.title}</div>
+              <div class="step-sub">${p.sub}</div>
+            </div>
+            ${idx < d.pipeline.length - 1 ? `
+              <div class="pipeline-connector">
+                <span class="pipeline-pulse"></span>
               </div>
-              <div>
-                <div class="ivr-title">${r.title}</div>
-                <div class="ivr-sub">${r.sub}</div>
-              </div>
-            </div>`
-          ).join('');
+            ` : ''}
+          `).join('');
         }
 
-        if (panel) {
-          panel.style.transition = 'opacity 0.35s ease, transform 0.35s cubic-bezier(0.22,1,0.36,1)';
-          panel.style.opacity = '1';
-          panel.style.transform = 'translateY(0)';
+        // 3. Update Compliance Chips & Governance Headings
+        if (govHeading && d.govHeading) govHeading.textContent = d.govHeading;
+        if (govSub && d.govSub) govSub.textContent = d.govSub;
+        if (govBadge && d.govBadge) govBadge.textContent = d.govBadge;
+        if (sovDesc && d.sovText) sovDesc.textContent = d.sovText;
+
+        if (chipsEl && d.chips) {
+          chipsEl.innerHTML = d.chips.map(c => `
+            <div class="bento-chip ${c.cls}">
+              <i class="fas ${c.icon}"></i> ${c.text}
+            </div>
+          `).join('');
         }
-      }, 150);
+
+        // 4. Update Telemetry Metrics
+        if (stat1Num) stat1Num.textContent = d.stat1.num;
+        if (stat1Lbl) stat1Lbl.textContent = d.stat1.label;
+        if (stat2Num) stat2Num.textContent = d.stat2.num;
+        if (stat2Lbl) stat2Lbl.textContent = d.stat2.label;
+        if (statNote) statNote.textContent = d.statNote;
+
+        // 5. Update Technology Stack Tags
+        if (techStackEl && d.techTags) {
+          techStackEl.innerHTML = d.techTags.map(t => `
+            <span class="tech-tag ${t.cls}">${t.text}</span>
+          `).join('');
+        }
+
+        // Staggered micro-fade in (Mission Control recalibration sensation)
+        tiles.forEach((tile, idx) => {
+          setTimeout(() => {
+            tile.style.transition = 'opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1), transform 0.35s cubic-bezier(0.22, 1, 0.36, 1)';
+            tile.style.opacity = '1';
+            tile.style.transform = 'translateY(0)';
+          }, idx * 40);
+        });
+      }, 160);
     });
   });
+
+  // ── Linear-Style Cursor Spotlight Tracking on Bento Tiles ──
+  const tiles = document.querySelectorAll('.bento-tile');
+  tiles.forEach(tile => {
+    tile.addEventListener('mousemove', (e) => {
+      const rect = tile.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      tile.style.setProperty('--mouse-x', `${x}px`);
+      tile.style.setProperty('--mouse-y', `${y}px`);
+    }, { passive: true });
+  });
+}
+
+/* ─────────────────────────────────────────────────────────
+   6b. Industry Flowchart to Bento In-Place Transition & Scroll
+   ───────────────────────────────────────────────────────── */
+function initIndustryFlowchartScroll() {
+  const track = document.getElementById('industryMasterTrack');
+  const stickyStage = document.getElementById('industryStickyStage');
+  const flowchartLayer = document.getElementById('flowchartLayer');
+  const bentoLayer = document.getElementById('bentoLayer');
+  const bentoInner = document.getElementById('bentoInnerWrap');
+  const cardsRow = document.getElementById('flowchartCardsRow');
+  const flowCards = document.querySelectorAll('.flow-card');
+  const tabBtns = document.querySelectorAll('.bento-tab-btn');
+
+  // Pencil Bezier Paths
+  const b1 = document.getElementById('pencilBranch1');
+  const b2 = document.getElementById('pencilBranch2');
+  const b3 = document.getElementById('pencilBranch3');
+  const b4 = document.getElementById('pencilBranch4');
+  const paths = [b1, b2, b3, b4].filter(Boolean);
+
+  if (!track || !stickyStage) return;
+
+  // Accurately compute native path lengths for pencil drawing
+  let pathLens = [];
+  function measurePaths() {
+    pathLens = paths.map(p => {
+      try {
+        const len = p.getTotalLength() || 400;
+        p.style.strokeDasharray = `${len}`;
+        p.style.strokeDashoffset = `${len}`;
+        return len;
+      } catch (e) {
+        return 400;
+      }
+    });
+  }
+  measurePaths();
+
+  let targetApproachP = 0;
+  let currentApproachP = 0;
+  let targetPinnedP = 0;
+  let currentPinnedP = 0;
+  let isTicking = false;
+
+  function onScroll() {
+    if (window.innerWidth <= 992) return;
+
+    const stickyTop = 72;
+    const rect = track.getBoundingClientRect();
+    const stickyH = stickyStage.offsetHeight || (window.innerHeight - stickyTop);
+    const maxScrollDist = Math.max(180, track.offsetHeight - stickyH);
+
+    // Approach distance before locking at stickyTop (Image 1)
+    const approachDist = 260;
+
+    // How far we have scrolled during the approach into Image 1 (0 to 1)
+    let approachP = 0;
+    if (rect.top <= stickyTop) {
+      approachP = 1;
+    } else if (rect.top >= stickyTop + approachDist) {
+      approachP = 0;
+    } else {
+      approachP = (stickyTop + approachDist - rect.top) / approachDist;
+    }
+
+    // How far we have scrolled after locking at stickyTop (0 to 1)
+    let pinnedP = 0;
+    const scrolledInside = stickyTop - rect.top;
+    if (scrolledInside <= 0) {
+      pinnedP = 0;
+    } else if (scrolledInside >= maxScrollDist) {
+      pinnedP = 1;
+    } else {
+      pinnedP = scrolledInside / maxScrollDist;
+    }
+
+    targetApproachP = approachP;
+    targetPinnedP = pinnedP;
+
+    if (!isTicking) {
+      isTicking = true;
+      requestAnimationFrame(renderLoop);
+    }
+  }
+
+  function renderLoop() {
+    const diffA = targetApproachP - currentApproachP;
+    const diffP = targetPinnedP - currentPinnedP;
+
+    if (Math.abs(diffA) > 0.001 || Math.abs(diffP) > 0.001) {
+      currentApproachP += diffA * 0.25;
+      currentPinnedP += diffP * 0.25;
+      applyState(currentApproachP, currentPinnedP);
+      requestAnimationFrame(renderLoop);
+    } else {
+      currentApproachP = targetApproachP;
+      currentPinnedP = targetPinnedP;
+      applyState(currentApproachP, currentPinnedP);
+      isTicking = false;
+    }
+  }
+
+  function applyState(approach, pinned) {
+    if (window.innerWidth <= 992) return;
+
+    // ── Phase 1: Pencil-Drawn Curves Branching Out (approach 0.00 to 0.60) ──
+    const drawP = Math.min(1, Math.max(0, approach / 0.60));
+    paths.forEach((path, i) => {
+      const len = pathLens[i] || 400;
+      path.style.strokeDashoffset = `${len * (1 - drawP)}`;
+    });
+
+    // ── Phase 2: 4 Cards Rise Up Together (approach 0.25 to 0.95) ──
+    // By approach = 1.0 (when section reaches navbar in Image 1), cards are 100% fully up!
+    const cardsP = Math.min(1, Math.max(0, (approach - 0.25) / 0.70));
+    if (cardsRow) {
+      cardsRow.style.opacity = `${cardsP}`;
+      cardsRow.style.transform = `translateY(${(1 - cardsP) * 20}px)`;
+    }
+
+    // ── Phase 3: Hold Window inside sticky stage (pinned 0.00 to 0.38) ──
+    // All 4 grids stay rock-solid in full resting view for at least 2 full scroll ticks
+    if (pinned < 0.38) {
+      if (flowchartLayer) {
+        flowchartLayer.style.display = 'flex';
+        flowchartLayer.style.visibility = 'visible';
+        flowchartLayer.style.opacity = '1';
+        flowchartLayer.style.transform = 'translateY(0)';
+        flowchartLayer.style.pointerEvents = 'auto';
+      }
+      if (bentoLayer) {
+        bentoLayer.style.display = 'none';
+        bentoLayer.style.visibility = 'hidden';
+        bentoLayer.style.opacity = '0';
+        bentoLayer.style.pointerEvents = 'none';
+      }
+    }
+
+    // ── Phase 4: Clean Smooth Fade-Out of Core Verticals (pinned 0.38 to 0.54) ──
+    else if (pinned >= 0.38 && pinned < 0.54) {
+      const fadeOut = (pinned - 0.38) / 0.16;
+      if (flowchartLayer) {
+        flowchartLayer.style.display = 'flex';
+        flowchartLayer.style.visibility = 'visible';
+        flowchartLayer.style.opacity = `${1 - fadeOut}`;
+        flowchartLayer.style.transform = `translateY(${-fadeOut * 18}px)`;
+        flowchartLayer.style.pointerEvents = 'none';
+      }
+      if (bentoLayer) {
+        bentoLayer.style.display = 'none';
+        bentoLayer.style.visibility = 'hidden';
+        bentoLayer.style.opacity = '0';
+        bentoLayer.style.pointerEvents = 'none';
+      }
+    }
+
+    // ── Phase 5: Clean Smooth Fade-In of Bento Cockpit (pinned 0.54 to 0.70) ──
+    else if (pinned >= 0.54 && pinned < 0.70) {
+      const fadeIn = (pinned - 0.54) / 0.16;
+      if (flowchartLayer) {
+        flowchartLayer.style.display = 'none';
+        flowchartLayer.style.visibility = 'hidden';
+        flowchartLayer.style.opacity = '0';
+        flowchartLayer.style.pointerEvents = 'none';
+      }
+      if (bentoLayer) {
+        bentoLayer.style.display = 'flex';
+        bentoLayer.style.visibility = 'visible';
+        bentoLayer.style.opacity = `${fadeIn}`;
+        bentoLayer.style.transform = `translateY(${(1 - fadeIn) * 14}px)`;
+        bentoLayer.style.pointerEvents = fadeIn > 0.4 ? 'auto' : 'none';
+      }
+      if (bentoInner) {
+        bentoInner.style.transform = 'none';
+      }
+    }
+
+    // ── Phase 6: Bento Cockpit 100% Solid & Active (pinned 0.70 to 1.00) ──
+    else if (pinned >= 0.70) {
+      if (flowchartLayer) {
+        flowchartLayer.style.display = 'none';
+        flowchartLayer.style.visibility = 'hidden';
+        flowchartLayer.style.opacity = '0';
+        flowchartLayer.style.pointerEvents = 'none';
+      }
+      if (bentoLayer) {
+        bentoLayer.style.display = 'flex';
+        bentoLayer.style.visibility = 'visible';
+        bentoLayer.style.opacity = '1';
+        bentoLayer.style.pointerEvents = 'auto';
+        bentoLayer.style.transform = 'translateY(0)';
+      }
+      if (bentoInner) {
+        const stickyH = stickyStage.offsetHeight || (window.innerHeight - 72);
+        const overflow = Math.max(0, bentoInner.offsetHeight - stickyH + 84);
+        if (overflow > 0 && pinned > 0.72) {
+          const panP = Math.min(1, Math.max(0, (pinned - 0.72) / 0.24));
+          const easedPan = panP * panP * (3 - 2 * panP);
+          bentoInner.style.transform = `translateY(${-easedPan * overflow}px)`;
+        } else {
+          bentoInner.style.transform = 'none';
+        }
+      }
+    }
+  }
+
+  // ── Header "Industries" Navigation Click Handler ──
+  // Scrolls smoothly to the exact point where all 4 grids are fully risen up in Image 1
+  document.querySelectorAll('a[href="#industries"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const rect = track.getBoundingClientRect();
+      const topPos = rect.top + window.scrollY - 72;
+      window.scrollTo({
+        top: topPos,
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // Card click interaction: Clicking a classification card transitions to Bento Cockpit & activates that tab!
+  flowCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const industry = card.dataset.industry;
+      if (!industry) return;
+
+      // Find matching bento tab and click it
+      const targetBtn = Array.from(tabBtns).find(btn => btn.dataset.industry === industry);
+      if (targetBtn) {
+        targetBtn.click();
+      }
+
+      // Smooth scroll to Bento phase (p = 0.75)
+      const rect = track.getBoundingClientRect();
+      const stickyH = stickyStage.offsetHeight || (window.innerHeight - 72);
+      const maxScrollDist = Math.max(180, track.offsetHeight - stickyH);
+      const targetScroll = rect.top + window.scrollY - 72 + (0.75 * maxScrollDist);
+
+      window.scrollTo({
+        top: targetScroll,
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', () => {
+    measurePaths();
+    if (window.innerWidth <= 992) {
+      if (flowchartLayer) {
+        flowchartLayer.style.opacity = '1';
+        flowchartLayer.style.transform = 'none';
+        flowchartLayer.style.pointerEvents = 'auto';
+      }
+      if (bentoLayer) {
+        bentoLayer.style.opacity = '1';
+        bentoLayer.style.transform = 'none';
+        bentoLayer.style.pointerEvents = 'auto';
+      }
+      if (cardsRow) {
+        cardsRow.style.opacity = '1';
+        cardsRow.style.transform = 'none';
+      }
+    } else {
+      onScroll();
+    }
+  });
+
+  // Initial measurement and scroll update
+  setTimeout(measurePaths, 150);
+  onScroll();
 }
 
 /* ─────────────────────────────────────────────────────────
    7. Project Cost Calculator
    ───────────────────────────────────────────────────────── */
 function initCalculator() {
-  let scope = 25000, size = 1.5, speed = 1.2;
   const amountEl = document.getElementById('calc-amount');
   const timeEl = document.getElementById('calc-time');
+  if (!amountEl && !document.querySelector('[data-calc]')) return;
+  let scope = 25000, size = 1.5, speed = 1.2;
 
   function animateValue(el, target) {
     if (!el) return;
@@ -628,8 +1123,9 @@ function initPlatformSlider() {
     prevBtn.disabled = page === 0;
     nextBtn.disabled = page === MAX_PAGE;
 
-    // Visual: active page = next btn filled when on page 0
+    // Visual: filled blue button indicates the primary action direction
     nextBtn.classList.toggle('active-page', page === 0);
+    prevBtn.classList.toggle('active-page', page === MAX_PAGE);
   }
 
   prevBtn.addEventListener('click', () => {
@@ -652,7 +1148,10 @@ function initPlatformSlider() {
   }
   // Run after first paint so card widths are measured correctly
   requestAnimationFrame(() => { requestAnimationFrame(setBaseWidth); });
-  window.addEventListener('resize', setBaseWidth);
+  window.addEventListener('resize', () => {
+    setBaseWidth();
+    render();
+  });
 
   // ── Video hover play/pause ──────────────────────────────────
   // Browsers won't autoplay invisible videos — must call .play() explicitly
@@ -671,13 +1170,236 @@ function initPlatformSlider() {
     });
 
     card.addEventListener('mouseleave', () => {
-      video.pause();
-      // Delay reset until AFTER the 0.55s CSS opacity fade-out finishes
-      // Resetting immediately causes a flash of frame-0 while video is still visible
+      // Delay pause and reset until AFTER the CSS opacity fade-out completes
+      // This keeps motion natural while dissolving and avoids frozen frames or flashes
       resetTimer = setTimeout(() => {
+        video.pause();
         video.currentTime = 0;
         resetTimer = null;
-      }, 620);
+      }, 480);
+    });
+  });
+}
+
+/* ─────────────────────────────────────────────────────────
+   13. Capabilities Pinned Dual-Track Horizontal Parallax
+   Award-Winning Multi-Row Horizontal Stream (Awwwards SOTD)
+   Pattern: Pinned Multi-Track Parallax Rails
+   ───────────────────────────────────────────────────────── */
+function initCapabilitiesScrollGrid() {
+  const track = document.getElementById('svcScrollTrack');
+  const viewport = document.getElementById('svcDualViewport');
+  const row1 = document.getElementById('svcTrackRow1');
+  const row2 = document.getElementById('svcTrackRow2');
+  if (!track || !viewport || !row1 || !row2) return;
+
+  const card3 = row1.querySelector('[data-card="3"]');
+  const card5 = row2.querySelector('[data-card="5"]');
+
+  let cardWidth = 0;
+  let gap = 18.4; // 1.15rem ~ 18.4px
+  let maxShift = 0;
+  let targetShift = 0;
+  let currentShift = 0;
+  let targetFade = 1.0;
+  let currentFade = 1.0;
+  let isTicking = false;
+
+  function measure() {
+    if (window.innerWidth <= 900) {
+      viewport.style.removeProperty('--svc-card-w');
+      row1.style.removeProperty('--row1-tx');
+      row2.style.removeProperty('--row2-tx');
+      if (card3) {
+        card3.style.removeProperty('opacity');
+        card3.style.removeProperty('pointer-events');
+      }
+      if (card5) {
+        card5.style.removeProperty('opacity');
+        card5.style.removeProperty('pointer-events');
+      }
+      return;
+    }
+
+    const containerW = viewport.offsetWidth;
+    gap = 18.4;
+    cardWidth = Math.floor((containerW - 2 * gap) / 3);
+    viewport.style.setProperty('--svc-card-w', `${cardWidth}px`);
+
+    // Distance required so Row 1 (moving right) reveals Card 4 on left,
+    // and Row 2 (moving left) reveals Card 8 on right
+    maxShift = cardWidth + gap;
+
+    onScroll();
+  }
+
+  function onScroll() {
+    if (window.innerWidth <= 900) return;
+
+    const stickyTop = 100; // sticky top offset in px
+    const rect = track.getBoundingClientRect();
+    const stickyViewport = document.getElementById('svcStickyViewport');
+    const stickyH = (stickyViewport ? stickyViewport.offsetHeight : 0) || 500;
+
+    // Available distance to scroll through while sticky element is active inside track
+    // Uses true physical distance (track height minus sticky element height) — immune to zoom/windowH
+    const maxScrollDist = Math.max(120, rect.height - stickyH);
+
+    // Distance scrolled past the point where the sticky grid locks at stickyTop
+    const scrolledInside = stickyTop - rect.top;
+
+    let rawP = 0;
+    if (scrolledInside <= 0) {
+      rawP = 0;
+    } else if (scrolledInside >= maxScrollDist) {
+      rawP = 1;
+    } else {
+      rawP = scrolledInside / maxScrollDist;
+    }
+
+    // Deadband buffers:
+    // 0.00 to 0.22: Resting with Cards 1-3 & 5-7 in initial view
+    // 0.22 to 0.85: Smooth criss-cross horizontal stream (Row 1 -> right, Row 2 -> left)
+    // 0.85 to 1.00: Cards 4, 1, 2 & 6, 7, 8 rest cleanly in place
+    const START_BUFFER = 0.22;
+    const END_BUFFER = 0.85;
+
+    let p = 0;
+    if (rawP <= START_BUFFER) {
+      p = 0;
+    } else if (rawP >= END_BUFFER) {
+      p = 1;
+    } else {
+      p = (rawP - START_BUFFER) / (END_BUFFER - START_BUFFER);
+    }
+
+    // Award-winning smooth cubic easing
+    const ease = p < 0.5
+      ? 4 * p * p * p
+      : 1 - Math.pow(-2 * p + 2, 3) / 2;
+
+    targetShift = ease * maxShift;
+    targetFade = Math.max(0, 1 - p * 2.0);
+
+    if (!isTicking) {
+      isTicking = true;
+      requestAnimationFrame(renderLoop);
+    }
+  }
+
+  function renderLoop() {
+    const diff = targetShift - currentShift;
+    const fadeDiff = targetFade - currentFade;
+
+    if (Math.abs(diff) > 0.3 || Math.abs(fadeDiff) > 0.01) {
+      currentShift += diff * 0.14; // silky momentum lerp
+      currentFade += fadeDiff * 0.14;
+
+      // Criss-cross motion:
+      // Row 1 moves from left to right (-(maxShift - currentShift) -> goes towards 0)
+      // Row 2 moves from right to left (-currentShift -> goes towards -maxShift)
+      const tx1 = -(maxShift - currentShift);
+      const tx2 = -currentShift;
+
+      row1.style.setProperty('--row1-tx', `${tx1.toFixed(1)}px`);
+      row2.style.setProperty('--row2-tx', `${tx2.toFixed(1)}px`);
+
+      if (card3) {
+        card3.style.opacity = currentFade.toFixed(2);
+        card3.style.pointerEvents = currentFade < 0.1 ? 'none' : 'auto';
+      }
+      if (card5) {
+        card5.style.opacity = currentFade.toFixed(2);
+        card5.style.pointerEvents = currentFade < 0.1 ? 'none' : 'auto';
+      }
+
+      requestAnimationFrame(renderLoop);
+    } else {
+      currentShift = targetShift;
+      currentFade = targetFade;
+
+      const tx1 = -(maxShift - currentShift);
+      const tx2 = -currentShift;
+
+      row1.style.setProperty('--row1-tx', `${tx1.toFixed(1)}px`);
+      row2.style.setProperty('--row2-tx', `${tx2.toFixed(1)}px`);
+
+      if (card3) {
+        card3.style.opacity = currentFade.toFixed(2);
+        card3.style.pointerEvents = currentFade < 0.1 ? 'none' : 'auto';
+      }
+      if (card5) {
+        card5.style.opacity = currentFade.toFixed(2);
+        card5.style.pointerEvents = currentFade < 0.1 ? 'none' : 'auto';
+      }
+
+      isTicking = false;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', measure);
+
+  requestAnimationFrame(() => {
+    measure();
+    onScroll();
+  });
+  setTimeout(measure, 150);
+}
+
+/* ─────────────────────────────────────────────────────────
+   13. Executive Leadership Interactive Spotlight
+   ───────────────────────────────────────────────────────── */
+function initLeadershipSpotlight() {
+  const btns = Array.from(document.querySelectorAll('.exec-selector-btn'));
+  const panels = Array.from(document.querySelectorAll('.spotlight-panel'));
+  if (!btns.length || !panels.length) return;
+
+  function activateMember(targetKey) {
+    btns.forEach(btn => {
+      const match = btn.getAttribute('data-exec-target') === targetKey;
+      btn.classList.toggle('active', match);
+      btn.setAttribute('aria-selected', match ? 'true' : 'false');
+    });
+
+    panels.forEach(panel => {
+      const match = panel.id === `panel-${targetKey}`;
+      if (match) {
+        panel.style.display = 'block';
+        // Force reflow for silky smooth slide transition
+        void panel.offsetWidth;
+        panel.classList.add('active');
+      } else {
+        panel.classList.remove('active');
+        panel.style.display = 'none';
+      }
+    });
+  }
+
+  btns.forEach((btn, idx) => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-exec-target');
+      if (target) activateMember(target);
+    });
+
+    btn.addEventListener('keydown', (e) => {
+      let nextIdx = -1;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        nextIdx = (idx + 1) % btns.length;
+      } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        nextIdx = (idx - 1 + btns.length) % btns.length;
+      } else if (e.key === 'Home') {
+        nextIdx = 0;
+      } else if (e.key === 'End') {
+        nextIdx = btns.length - 1;
+      }
+
+      if (nextIdx !== -1) {
+        e.preventDefault();
+        btns[nextIdx].focus();
+        const target = btns[nextIdx].getAttribute('data-exec-target');
+        if (target) activateMember(target);
+      }
     });
   });
 }

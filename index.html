@@ -9,14 +9,17 @@
   <meta name="description"
     content="VJSAR is a London-headquartered IT consultancy specialising in Microsoft Azure cloud adoption, AI & machine learning, enterprise application modernisation, data analytics, and the Context Insurance Platform.">
 
-  <!-- Fonts & Icons -->
+  <!-- Favicon / Website Tab Icon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico?v=3">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon.png?v=3">
+  <link rel="apple-touch-icon" href="favicon.png?v=3">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=95">
+  <link rel="stylesheet" href="styles.css?v=171">
 
 </head>
 
@@ -69,7 +72,8 @@
           </ul>
         </li>
         <li class="nav-item"><a href="#industries" class="nav-link">Industries</a></li>
-        <li class="nav-item"><a href="#team" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#careers" class="nav-link">Careers</a></li>
       </ul>
 
       <!-- Actions -->
@@ -88,7 +92,7 @@
   <!-- ════════════════════════════════════════════
      HERO
      ════════════════════════════════════════════ -->
-  <section class="hero">
+  <section class="hero" id="hero">
     <!-- Background video playing in hero banner (seamless continuous flow, horizontally flipped) -->
     <div class="hero-video-wrap">
       <video class="hero-bg-video" autoplay muted loop playsinline preload="auto">
@@ -222,8 +226,8 @@
                 </div>
                 <div class="metric-divider"></div>
                 <div class="console-metric">
-                  <div class="metric-val text-navy" data-count="12.4" data-suffix="M+" data-decimals="1"><span class="stat-num">0.0</span>M+</div>
-                  <div class="metric-label">Records Processed</div>
+                  <div class="metric-val text-navy" data-count="98" data-suffix="%" data-decimals="0"><span class="stat-num">0</span>%</div>
+                  <div class="metric-label">Extraction Accuracy</div>
                 </div>
               </div>
             </div>
@@ -378,9 +382,11 @@
               <video class="pf-card-video" src="Flowww.mp4" muted loop playsinline></video>
               <div class="pf-card-overlay"></div>
               <div class="pf-card-content">
-                <div class="pf-card-icon"><i class="fas fa-shield-halved"></i></div>
-                <h3 class="pf-card-title">Context Insure</h3>
-                <p class="pf-card-desc">Cited insurance records &amp; governed workflows — converting broker emails, schedules, and claims into review-ready records.</p>
+                <div class="pf-card-info">
+                  <div class="pf-card-icon"><i class="fas fa-shield-halved"></i></div>
+                  <h3 class="pf-card-title">Context Insure</h3>
+                  <p class="pf-card-desc">Cited insurance records &amp; governed workflows — converting broker emails, schedules, and claims into review-ready records.</p>
+                </div>
                 <ul class="pf-card-features">
                   <li><i class="fas fa-check"></i> Cited Submission &amp; Intake Records</li>
                   <li><i class="fas fa-check"></i> Governed Underwriting Pre-Bind Gates</li>
@@ -395,9 +401,11 @@
               <video class="pf-card-video" src="Flowww.mp4" muted loop playsinline></video>
               <div class="pf-card-overlay"></div>
               <div class="pf-card-content">
-                <div class="pf-card-icon"><i class="fas fa-folder-open"></i></div>
-                <h3 class="pf-card-title">Context DMS</h3>
-                <p class="pf-card-desc">Intelligent document management for insurance compliance, secure archiving, and rapid policy retrieval at enterprise scale.</p>
+                <div class="pf-card-info">
+                  <div class="pf-card-icon"><i class="fas fa-folder-open"></i></div>
+                  <h3 class="pf-card-title">Context DMS</h3>
+                  <p class="pf-card-desc">Intelligent document management for insurance compliance, secure archiving, and rapid policy retrieval at enterprise scale.</p>
+                </div>
                 <ul class="pf-card-features">
                   <li><i class="fas fa-check"></i> AI-powered OCR &amp; Document Indexing</li>
                   <li><i class="fas fa-check"></i> Audit-Ready Compliance Vaults</li>
@@ -412,9 +420,11 @@
               <video class="pf-card-video" src="Flowww.mp4" muted loop playsinline></video>
               <div class="pf-card-overlay"></div>
               <div class="pf-card-content">
-                <div class="pf-card-icon"><i class="fas fa-clipboard-check"></i></div>
-                <h3 class="pf-card-title">Context Claim</h3>
-                <p class="pf-card-desc">AI-powered end-to-end claims lifecycle management — reducing settlement times from weeks to minutes.</p>
+                <div class="pf-card-info">
+                  <div class="pf-card-icon"><i class="fas fa-clipboard-check"></i></div>
+                  <h3 class="pf-card-title">Context Claim</h3>
+                  <p class="pf-card-desc">AI-powered end-to-end claims lifecycle management — reducing settlement times from weeks to minutes.</p>
+                </div>
                 <ul class="pf-card-features">
                   <li><i class="fas fa-check"></i> Automated FNOL Processing</li>
                   <li><i class="fas fa-check"></i> Real-time Fraud Detection</li>
@@ -429,9 +439,11 @@
               <video class="pf-card-video" src="Flowww.mp4" muted loop playsinline></video>
               <div class="pf-card-overlay"></div>
               <div class="pf-card-content">
-                <div class="pf-card-icon"><i class="fas fa-laptop-code"></i></div>
-                <h3 class="pf-card-title">Context Workbench</h3>
-                <p class="pf-card-desc">Low-code developer environment for rapidly building custom insurance workflows and automations without infrastructure complexity.</p>
+                <div class="pf-card-info">
+                  <div class="pf-card-icon"><i class="fas fa-laptop-code"></i></div>
+                  <h3 class="pf-card-title">Context Workbench</h3>
+                  <p class="pf-card-desc">Low-code developer environment for rapidly building custom insurance workflows and automations without infrastructure complexity.</p>
+                </div>
                 <ul class="pf-card-features">
                   <li><i class="fas fa-check"></i> Visual Workflow Builder</li>
                   <li><i class="fas fa-check"></i> Pre-built Insurance API Connectors</li>
@@ -459,8 +471,8 @@
   <!-- ════════════════════════════════════════════
      SERVICES
      ════════════════════════════════════════════ -->
-  <section id="services" class="section section-white">
-    <div class="container">
+  <section id="services" class="section section-bg-white svc-pin-section">
+    <div class="container svc-header-container">
       <div class="section-header reveal-left">
         <div class="section-line"></div>
         <span class="eyebrow"><i class="fas fa-cogs"></i> Our Capabilities</span>
@@ -468,125 +480,177 @@
         <p>Tailored technology solutions across seven core disciplines, engineered to solve complex operational
           challenges at scale.</p>
       </div>
+    </div>
 
-      <div class="services-grid">
-        <!-- 01 Cloud Adoption & Azure -->
-        <div class="service-card svc-video-card">
-          <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
-          <span class="svc-num">01</span>
-          <div class="svc-icon"><i class="fas fa-cloud"></i></div>
-          <h4 class="svc-title">Cloud Adoption &amp; Azure</h4>
-          <p class="svc-desc">Strategic cloud migration, multi-cloud architecture design, cost optimisation, and Azure
-            governance.</p>
-          <div class="svc-tags">
-            <span class="tag">Azure Migration</span>
-            <span class="tag">FinOps</span>
-            <span class="tag">Cloud Security</span>
+    <!-- Pinned Scroll Track for Grids -->
+    <div class="svc-scroll-track" id="svcScrollTrack">
+      <div class="svc-sticky-viewport" id="svcStickyViewport">
+        <div class="container svc-viewport-container">
+          <div class="svc-dual-viewport" id="svcDualViewport">
+        <!-- Row 1 Track: Cards 4, 1, 2, 3 (moves left-to-right to reveal card 4) -->
+        <div class="svc-track-row" id="svcTrackRow1">
+          <!-- 04 Data & Analytics -->
+          <div class="service-card svc-video-card" data-card="4">
+            <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
+            <div class="svc-icon"><i class="fas fa-chart-bar"></i></div>
+            <div class="svc-info">
+              <h4 class="svc-title">Data &amp; Analytics</h4>
+              <p class="svc-desc">Enterprise data warehousing, real-time BI dashboards, ETL pipelines, and data governance
+                frameworks.</p>
+            </div>
+            <div class="svc-tags">
+              <span class="tag">Power BI</span>
+              <span class="tag">Data Factory</span>
+              <span class="tag">ETL</span>
+            </div>
+          </div>
+
+          <!-- 01 Cloud Adoption & Azure -->
+          <div class="service-card svc-video-card" data-card="1">
+            <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
+            <div class="svc-icon"><i class="fas fa-cloud"></i></div>
+            <div class="svc-info">
+              <h4 class="svc-title">Cloud Adoption &amp; Azure</h4>
+              <p class="svc-desc">Strategic cloud migration, multi-cloud architecture design, cost optimisation, and Azure
+                governance.</p>
+            </div>
+            <div class="svc-tags">
+              <span class="tag">Azure Migration</span>
+              <span class="tag">FinOps</span>
+              <span class="tag">Cloud Security</span>
+            </div>
+          </div>
+
+          <!-- 02 AI & Machine Learning -->
+          <div class="service-card svc-video-card" id="svc-ai-card" data-card="2">
+            <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
+            <div class="svc-icon"><i class="fas fa-brain"></i></div>
+            <div class="svc-info">
+              <h4 class="svc-title">AI &amp; Machine Learning</h4>
+              <p class="svc-desc">Generative AI integration, predictive analytics pipelines, intelligent automation, and
+                LLM-powered products.</p>
+            </div>
+            <div class="svc-tags">
+              <span class="tag">LLM Integration</span>
+              <span class="tag">Predictive Models</span>
+              <span class="tag">NLP</span>
+            </div>
+          </div>
+
+          <!-- 03 Application Modernisation -->
+          <div class="service-card svc-video-card" data-card="3">
+            <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
+            <div class="svc-icon"><i class="fas fa-code-branch"></i></div>
+            <div class="svc-info">
+              <h4 class="svc-title">App Modernisation</h4>
+              <p class="svc-desc">Refactoring legacy systems into cloud-native microservices with modern .NET Core and React
+                stacks.</p>
+            </div>
+            <div class="svc-tags">
+              <span class="tag">Microservices</span>
+              <span class="tag">.NET Core</span>
+              <span class="tag">React</span>
+            </div>
           </div>
         </div>
 
-        <!-- 02 AI & Machine Learning -->
-        <div class="service-card svc-video-card" id="svc-ai-card">
-          <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
-          <span class="svc-num">02</span>
-          <div class="svc-icon"><i class="fas fa-brain"></i></div>
-          <h4 class="svc-title">AI &amp; Machine Learning</h4>
-          <p class="svc-desc">Generative AI integration, predictive analytics pipelines, intelligent automation, and
-            LLM-powered products.</p>
-          <div class="svc-tags">
-            <span class="tag">LLM Integration</span>
-            <span class="tag">Predictive Models</span>
-            <span class="tag">NLP</span>
+        <!-- Row 2 Track: Cards 5, 6, 7, 8 -->
+        <div class="svc-track-row" id="svcTrackRow2">
+          <!-- 05 Low Code / No Code -->
+          <div class="service-card svc-video-card" data-card="5">
+            <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
+            <div class="svc-icon"><i class="fas fa-cubes"></i></div>
+            <div class="svc-info">
+              <h4 class="svc-title">Low Code / No Code</h4>
+              <p class="svc-desc">Rapid application delivery with Microsoft Power Platform and custom workflow automation
+                engines.</p>
+            </div>
+            <div class="svc-tags">
+              <span class="tag">Power Apps</span>
+              <span class="tag">Power Automate</span>
+              <span class="tag">Rapid MVP</span>
+            </div>
+          </div>
+
+          <!-- 06 SRE & DevOps -->
+          <div class="service-card svc-video-card" data-card="6">
+            <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
+            <div class="svc-icon"><i class="fas fa-infinity"></i></div>
+            <div class="svc-info">
+              <h4 class="svc-title">SRE &amp; DevOps</h4>
+              <p class="svc-desc">CI/CD pipeline automation, Infrastructure as Code (Terraform), 99.99% reliability
+                engineering.</p>
+            </div>
+            <div class="svc-tags">
+              <span class="tag">Terraform</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">CI/CD</span>
+            </div>
+          </div>
+
+          <!-- 07 Quality Assurance & Testing -->
+          <div class="service-card svc-video-card" data-card="7">
+            <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
+            <div class="svc-icon"><i class="fas fa-vial"></i></div>
+            <div class="svc-info">
+              <h4 class="svc-title">Quality Assurance</h4>
+              <p class="svc-desc">Automated regression, performance load testing, security scanning, and continuous quality
+                integration.</p>
+            </div>
+            <div class="svc-tags">
+              <span class="tag">Selenium</span>
+              <span class="tag">Load Testing</span>
+              <span class="tag">Security Audit</span>
+            </div>
+          </div>
+
+          <!-- 08 Other Services -->
+          <div class="service-card svc-video-card" data-card="8">
+            <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
+            <div class="svc-icon"><i class="fas fa-shapes"></i></div>
+            <div class="svc-info">
+              <h4 class="svc-title">Other Services</h4>
+              <p class="svc-desc">Tailored enterprise IT advisory, bespoke software engineering, cybersecurity, and
+                specialized technical consulting.</p>
+            </div>
+            <div class="svc-tags">
+              <span class="tag">IT Advisory</span>
+              <span class="tag">Cybersecurity</span>
+              <span class="tag">Custom Dev</span>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </section>
 
-        <!-- 03 Application Modernisation -->
-        <div class="service-card svc-video-card">
-          <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
-          <span class="svc-num">03</span>
-          <div class="svc-icon"><i class="fas fa-code-branch"></i></div>
-          <h4 class="svc-title">App Modernisation</h4>
-          <p class="svc-desc">Refactoring legacy systems into cloud-native microservices with modern .NET Core and React
-            stacks.</p>
-          <div class="svc-tags">
-            <span class="tag">Microservices</span>
-            <span class="tag">.NET Core</span>
-            <span class="tag">React</span>
-          </div>
+  <!-- ════════════════════════════════════════════
+     INTERSTITIAL CTA BANNER (Breakout Conversion Pod)
+     ════════════════════════════════════════════ -->
+  <section class="section-cta-breakout">
+    <div class="container">
+      <div class="cta-banner-card">
+        <!-- Background Video (1.mp4) -->
+        <div class="cta-banner-video-wrap">
+          <video class="cta-banner-bg-video" autoplay muted loop playsinline preload="auto" src="1.mp4">
+            <source src="1.mp4" type="video/mp4">
+          </video>
+          <div class="cta-banner-overlay"></div>
         </div>
 
-        <!-- 04 Data & Analytics -->
-        <div class="service-card svc-video-card">
-          <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
-          <span class="svc-num">04</span>
-          <div class="svc-icon"><i class="fas fa-chart-bar"></i></div>
-          <h4 class="svc-title">Data &amp; Analytics</h4>
-          <p class="svc-desc">Enterprise data warehousing, real-time BI dashboards, ETL pipelines, and data governance
-            frameworks.</p>
-          <div class="svc-tags">
-            <span class="tag">Power BI</span>
-            <span class="tag">Data Factory</span>
-            <span class="tag">ETL</span>
-          </div>
-        </div>
+        <!-- Atmospheric Glow Accent -->
+        <div class="cta-banner-glow"></div>
 
-        <!-- 05 Low Code / No Code -->
-        <div class="service-card svc-video-card">
-          <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
-          <span class="svc-num">05</span>
-          <div class="svc-icon"><i class="fas fa-cubes"></i></div>
-          <h4 class="svc-title">Low Code / No Code</h4>
-          <p class="svc-desc">Rapid application delivery with Microsoft Power Platform and custom workflow automation
-            engines.</p>
-          <div class="svc-tags">
-            <span class="tag">Power Apps</span>
-            <span class="tag">Power Automate</span>
-            <span class="tag">Rapid MVP</span>
-          </div>
-        </div>
-
-        <!-- 06 SRE & DevOps -->
-        <div class="service-card svc-video-card">
-          <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
-          <span class="svc-num">06</span>
-          <div class="svc-icon"><i class="fas fa-infinity"></i></div>
-          <h4 class="svc-title">SRE &amp; DevOps</h4>
-          <p class="svc-desc">CI/CD pipeline automation, Infrastructure as Code (Terraform), 99.99% reliability
-            engineering.</p>
-          <div class="svc-tags">
-            <span class="tag">Terraform</span>
-            <span class="tag">Kubernetes</span>
-            <span class="tag">CI/CD</span>
-          </div>
-        </div>
-
-        <!-- 07 Quality Assurance & Testing -->
-        <div class="service-card svc-video-card">
-          <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
-          <span class="svc-num">07</span>
-          <div class="svc-icon"><i class="fas fa-vial"></i></div>
-          <h4 class="svc-title">Quality Assurance</h4>
-          <p class="svc-desc">Automated regression, performance load testing, security scanning, and continuous quality
-            integration.</p>
-          <div class="svc-tags">
-            <span class="tag">Selenium</span>
-            <span class="tag">Load Testing</span>
-            <span class="tag">Security Audit</span>
-          </div>
-        </div>
-
-        <!-- 08 Other Services -->
-        <div class="service-card svc-video-card">
-          <video class="svc-bg-video" src="Flowy.mp4" muted loop playsinline preload="auto"></video>
-          <span class="svc-num">08</span>
-          <div class="svc-icon"><i class="fas fa-shapes"></i></div>
-          <h4 class="svc-title">Other Services</h4>
-          <p class="svc-desc">Tailored enterprise IT advisory, bespoke software engineering, cybersecurity, and
-            specialized technical consulting.</p>
-          <div class="svc-tags">
-            <span class="tag">IT Advisory</span>
-            <span class="tag">Cybersecurity</span>
-            <span class="tag">Custom Dev</span>
+        <!-- Content -->
+        <div class="cta-banner-content">
+          <h2 class="cta-banner-title">Want Innovative Solutions to your Business?</h2>
+          <p class="cta-banner-desc">Let's discuss how our expertise can accelerate your digital transformation journey.</p>
+          <div class="cta-banner-action">
+            <button class="btn btn-cta-white open-modal">
+              Contact Our Team <i class="fas fa-arrow-right" style="font-size:0.8rem;margin-left:0.4rem;"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -594,123 +658,589 @@
   </section>
 
   <!-- ════════════════════════════════════════════
-     INDUSTRIES
+     INDUSTRIES (In-Place Flowchart to Enterprise Bento Cockpit Transition)
      ════════════════════════════════════════════ -->
-  <section id="industries" class="section section-bg-sky">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-line"></div>
-        <span class="eyebrow"><i class="fas fa-building"></i> Industry Expertise</span>
-        <h2>Specialised Solutions for Regulated Markets</h2>
-        <p>Tailored technology frameworks built to meet strict compliance, security, and performance standards across
-          major financial and healthcare verticals.</p>
-      </div>
+  <section id="industries" class="section section-bg-sky bento-industries-section">
+    
+    <!-- Unified Master Scroll Track for Seamless In-Place Transition -->
+    <div class="industry-master-track" id="industryMasterTrack">
+      <div class="industry-sticky-stage" id="industryStickyStage">
 
-      <div class="tab-row">
-        <button class="tab-btn active" data-industry="insurance"><i class="fas fa-shield-alt"></i> Insurance</button>
-        <button class="tab-btn" data-industry="banking"><i class="fas fa-university"></i> Banking</button>
-        <button class="tab-btn" data-industry="finance"><i class="fas fa-coins"></i> Financial Services</button>
-        <button class="tab-btn" data-industry="healthcare"><i class="fas fa-heartbeat"></i> Healthcare</button>
-      </div>
+        <!-- ── STAGE LAYER 1: Core Verticals Flowchart (Initial View) ── -->
+        <div class="industry-stage-layer flowchart-layer" id="flowchartLayer">
+          <div class="container flowchart-container">
 
-      <div class="industry-panel reveal-scale">
-        <div>
-          <h3 class="ind-title" id="ind-title">Insurance & Claims Modernisation</h3>
-          <p class="ind-desc" id="ind-desc">Empowering insurers with intelligent automation, Context Claim processing,
-            legacy refactoring, and AI-assisted underwriting.</p>
-          <ul class="benefit-list" id="ind-list">
-            <li><i class="fas fa-check-circle"></i> Automated Claims Intake via Context DMS</li>
-            <li><i class="fas fa-check-circle"></i> Legacy Policy Admin Modernisation to Azure</li>
-            <li><i class="fas fa-check-circle"></i> Real-time Fraud Detection & Risk Analytics</li>
-            <li><i class="fas fa-check-circle"></i> Solvency II & FCA Compliance Architectures</li>
-          </ul>
-          <button class="btn btn-primary open-modal">
-            <i class="fas fa-arrow-right"></i> Request Industry Brief
-          </button>
-        </div>
+            <!-- Initial Header: Only "Our Core Verticals" -->
+            <div class="flowchart-header" id="flowchartHeader">
+              <span class="flowchart-eyebrow"><i class="fas fa-layer-group"></i> Sector Classification</span>
+              <h2 class="flowchart-title">Our Core Verticals</h2>
+            </div>
 
-        <div class="ind-visual">
-          <div class="ind-visual-row">
-            <div class="ivr-icon"><i class="fas fa-file-shield"></i></div>
-            <div>
-              <div class="ivr-title">Compliance Framework</div>
-              <div class="ivr-sub">Solvency II · FCA · GDPR Ready</div>
+            <!-- Pencil-Drawn Smooth Bezier Curves (Branching out from center) -->
+            <div class="flowchart-svg-wrap">
+              <svg class="flowchart-svg" id="flowchartPencilSvg" viewBox="0 0 1200 90" preserveAspectRatio="none" fill="none">
+                <defs>
+                  <linearGradient id="pencilGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#1F71B9" />
+                    <stop offset="50%" stop-color="#24B6EA" />
+                    <stop offset="100%" stop-color="#52D19D" />
+                  </linearGradient>
+                </defs>
+                <!-- 4 Continuous Organic Bezier Curves branching smoothly like a hand-drawn pencil line -->
+                <path class="flow-pencil-path" id="pencilBranch1" d="M 600,0 C 600,45 142.5,35 142.5,86" stroke="url(#pencilGrad)" stroke-width="2.5" stroke-linecap="round" />
+                <path class="flow-pencil-path" id="pencilBranch2" d="M 600,0 C 600,45 447.5,40 447.5,86" stroke="url(#pencilGrad)" stroke-width="2.5" stroke-linecap="round" />
+                <path class="flow-pencil-path" id="pencilBranch3" d="M 600,0 C 600,45 752.5,40 752.5,86" stroke="url(#pencilGrad)" stroke-width="2.5" stroke-linecap="round" />
+                <path class="flow-pencil-path" id="pencilBranch4" d="M 600,0 C 600,45 1057.5,35 1057.5,86" stroke="url(#pencilGrad)" stroke-width="2.5" stroke-linecap="round" />
+              </svg>
             </div>
-          </div>
-          <div class="ind-visual-row">
-            <div class="ivr-icon"><i class="fas fa-robot"></i></div>
-            <div>
-              <div class="ivr-title">AI Claims Automation</div>
-              <div class="ivr-sub">FNOL to Settlement in Minutes</div>
+
+            <!-- 4 Classification Grids (No Explore Cockpit button, no hover pop-up) -->
+            <div class="flowchart-cards-row" id="flowchartCardsRow">
+              
+              <!-- Card 1: Insurance -->
+              <div class="flow-card" data-industry="insurance" role="button" tabindex="0" aria-label="Select Insurance Sector">
+                <div class="flow-card-top">
+                  <div class="flow-card-icon-wrap icon-blue">
+                    <i class="fas fa-shield-alt"></i>
+                  </div>
+                  <span class="flow-card-badge badge-blue">Context Suite</span>
+                </div>
+                <h4 class="flow-card-title">Insurance</h4>
+                <p class="flow-card-desc">AI claims intake, STP policy processing &amp; Lloyd's market integration.</p>
+                <div class="flow-card-chips">
+                  <span class="flow-chip"><i class="fas fa-bolt"></i> 98% Extraction</span>
+                  <span class="flow-chip"><i class="fas fa-shield-halved"></i> Solvency II</span>
+                </div>
+              </div>
+
+              <!-- Card 2: Banking -->
+              <div class="flow-card" data-industry="banking" role="button" tabindex="0" aria-label="Select Banking Sector">
+                <div class="flow-card-top">
+                  <div class="flow-card-icon-wrap icon-navy">
+                    <i class="fas fa-university"></i>
+                  </div>
+                  <span class="flow-card-badge badge-navy">PSD2 &amp; Core</span>
+                </div>
+                <h4 class="flow-card-title">Banking</h4>
+                <p class="flow-card-desc">Open banking APIs, core modernisation &amp; mTLS zero-trust security.</p>
+                <div class="flow-card-chips">
+                  <span class="flow-chip"><i class="fas fa-lock"></i> mTLS Zero-Trust</span>
+                  <span class="flow-chip"><i class="fas fa-server"></i> 99.99% SLA</span>
+                </div>
+              </div>
+
+              <!-- Card 3: Financial Services -->
+              <div class="flow-card" data-industry="finance" role="button" tabindex="0" aria-label="Select Financial Services Sector">
+                <div class="flow-card-top">
+                  <div class="flow-card-icon-wrap icon-cyan">
+                    <i class="fas fa-coins"></i>
+                  </div>
+                  <span class="flow-card-badge badge-cyan">Market Data</span>
+                </div>
+                <h4 class="flow-card-title">Financial Services</h4>
+                <p class="flow-card-desc">Low-latency telemetry feeds, algorithmic execution &amp; MiFID II pipelines.</p>
+                <div class="flow-card-chips">
+                  <span class="flow-chip"><i class="fas fa-chart-line"></i> &lt;5ms Latency</span>
+                  <span class="flow-chip"><i class="fas fa-file-contract"></i> MiFID II</span>
+                </div>
+              </div>
+
+              <!-- Card 4: Healthcare -->
+              <div class="flow-card" data-industry="healthcare" role="button" tabindex="0" aria-label="Select Healthcare Sector">
+                <div class="flow-card-top">
+                  <div class="flow-card-icon-wrap icon-green">
+                    <i class="fas fa-heartbeat"></i>
+                  </div>
+                  <span class="flow-card-badge badge-green">HIPAA &amp; FHIR</span>
+                </div>
+                <h4 class="flow-card-title">Healthcare</h4>
+                <p class="flow-card-desc">Clinical cloud enclaves, patient records &amp; NHS DSP toolkit compliance.</p>
+                <div class="flow-card-chips">
+                  <span class="flow-chip"><i class="fas fa-notes-medical"></i> HL7 FHIR</span>
+                  <span class="flow-chip"><i class="fas fa-shield-heart"></i> DSP Standards</span>
+                </div>
+              </div>
+
+            </div><!-- /flowchart-cards-row -->
+          </div><!-- /flowchart-container -->
+        </div><!-- /flowchart-layer -->
+
+
+        <!-- ── STAGE LAYER 2: Industry Expertise & Bento Cockpit (In-Place Transition) ── -->
+        <div class="industry-stage-layer bento-layer" id="bentoLayer">
+          <div class="container bento-inner-wrap" id="bentoInnerWrap">
+
+            <!-- Full Section Header (Fades in smoothly in the same place) -->
+            <div class="section-header bento-header" id="bentoHeader">
+              <div class="section-line"></div>
+              <span class="eyebrow"><i class="fas fa-building"></i> Industry Expertise</span>
+              <h2>Specialised Solutions for Regulated Markets</h2>
+              <p>Tailored technology frameworks built to meet strict compliance, security, and performance standards across
+                major financial and healthcare verticals.</p>
             </div>
-          </div>
-          <div class="ind-visual-row">
-            <div class="ivr-icon"><i class="fas fa-cloud"></i></div>
-            <div>
-              <div class="ivr-title">Azure Cloud Migration</div>
-              <div class="ivr-sub">99.9% Uptime · Zero-Downtime Cutover</div>
+
+            <!-- Apple-Style Sliding Segmented Tab Controller -->
+            <div class="bento-tab-container">
+              <div class="bento-tab-bar" id="bentoTabBar" role="tablist">
+                <div class="bento-tab-indicator" id="bentoTabIndicator"></div>
+
+                <button class="bento-tab-btn active" data-industry="insurance" role="tab" aria-selected="true">
+                  <span class="btb-icon"><i class="fas fa-shield-alt"></i></span>
+                  <span class="btb-text">
+                    <span class="btb-title">Insurance</span>
+                    <span class="btb-badge">Context Suite</span>
+                  </span>
+                </button>
+
+                <button class="bento-tab-btn" data-industry="banking" role="tab" aria-selected="false">
+                  <span class="btb-icon"><i class="fas fa-university"></i></span>
+                  <span class="btb-text">
+                    <span class="btb-title">Banking</span>
+                    <span class="btb-badge">PSD2 &amp; Core</span>
+                  </span>
+                </button>
+
+                <button class="bento-tab-btn" data-industry="finance" role="tab" aria-selected="false">
+                  <span class="btb-icon"><i class="fas fa-coins"></i></span>
+                  <span class="btb-text">
+                    <span class="btb-title">Financial Services</span>
+                    <span class="btb-badge">Market Data</span>
+                  </span>
+                </button>
+
+                <button class="bento-tab-btn" data-industry="healthcare" role="tab" aria-selected="false">
+                  <span class="btb-icon"><i class="fas fa-heartbeat"></i></span>
+                  <span class="btb-text">
+                    <span class="btb-title">Healthcare</span>
+                    <span class="btb-badge">HIPAA &amp; FHIR</span>
+                  </span>
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="ind-visual-row">
-            <div class="ivr-icon" style="background:var(--green-light);color:var(--green-dark);"><i
-                class="fas fa-chart-line"></i></div>
-            <div>
-              <div class="ivr-title">Analytics Dashboard</div>
-              <div class="ivr-sub">Real-time Risk & Pricing Insights</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+            <!-- Enterprise Bento Matrix -->
+            <div class="bento-cockpit-grid" id="bentoCockpitGrid">
+
+              <!-- Tile 1: Main Solution Core (Row 1, Span 7 cols) -->
+              <div class="bento-tile bento-hero-tile" id="bentoHeroTile">
+                <div class="bento-tile-glow"></div>
+                <div class="bento-tile-content">
+                  <div class="bento-tile-top">
+                    <span class="bento-domain-pill" id="bento-domain-badge">
+                      <i class="fas fa-shield-halved"></i> Mission-Critical Insurance
+                    </span>
+                    <span class="bento-live-badge">
+                      <span class="bento-live-ping"></span> Live Architecture
+                    </span>
+                  </div>
+
+                  <h3 class="bento-title" id="ind-title">Insurance &amp; Claims Modernisation</h3>
+                  <p class="bento-desc" id="ind-desc">
+                    Empowering insurers with intelligent automation, Context Claim processing, legacy refactoring, and AI-assisted underwriting.
+                  </p>
+
+                  <!-- Interactive Architecture Pipeline Flow -->
+                  <div class="bento-pipeline-wrap">
+                    <div class="bento-pipeline-label">End-to-End Enterprise Flow</div>
+                    <div class="bento-pipeline-track" id="bento-pipeline">
+                      <!-- Step 1: Ingest -->
+                      <div class="pipeline-step">
+                        <div class="step-badge">01 Ingest</div>
+                        <div class="step-icon"><i class="fas fa-inbox"></i></div>
+                        <div class="step-title">Broker Intake</div>
+                        <div class="step-sub">Context DMS Email &amp; Schedules</div>
+                      </div>
+                      <div class="pipeline-connector">
+                        <span class="pipeline-pulse"></span>
+                      </div>
+                      <!-- Step 2: Processing Engine -->
+                      <div class="pipeline-step active-step">
+                        <div class="step-badge">02 Core Engine</div>
+                        <div class="step-icon"><i class="fas fa-brain"></i></div>
+                        <div class="step-title">AI Clause Matching</div>
+                        <div class="step-sub">Automated Risk &amp; FNOL Triage</div>
+                      </div>
+                      <div class="pipeline-connector">
+                        <span class="pipeline-pulse"></span>
+                      </div>
+                      <!-- Step 3: Output / Governance -->
+                      <div class="pipeline-step">
+                        <div class="step-badge">03 Governed Gate</div>
+                        <div class="step-icon"><i class="fas fa-shield-check"></i></div>
+                        <div class="step-title">Pre-Bind Approval</div>
+                        <div class="step-sub">Solvency II &amp; Lloyd's Gate</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bento-cta-row">
+                    <button class="btn btn-primary open-modal" id="bento-cta-btn">
+                      <i class="fas fa-arrow-right"></i> Request Industry Brief
+                    </button>
+                    <span class="bento-cta-meta">
+                      <i class="fas fa-clock"></i> Typical architect response within 24h
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tile 2: Compliance & Regulatory Alignment (Row 1, Span 5 cols) -->
+              <div class="bento-tile bento-gov-tile" id="bentoGovTile">
+                <div class="bento-tile-glow"></div>
+                <div class="bento-tile-content">
+                  <div class="bento-tile-header">
+                    <div class="bento-header-left">
+                      <div class="bento-icon-box icon-navy">
+                        <i class="fas fa-building-columns"></i>
+                      </div>
+                      <div>
+                        <h4 class="bento-tile-heading" id="bento-gov-heading">Compliance Alignment</h4>
+                        <p class="bento-tile-sub" id="bento-gov-sub">Controls &amp; Governance Posture</p>
+                      </div>
+                    </div>
+                    <div class="bento-radar-badge">
+                      <span class="bento-radar-dot"></span>
+                      <span class="bento-radar-text" id="bento-gov-badge">Programme in Progress</span>
+                    </div>
+                  </div>
+
+                  <div class="bento-compliance-chips" id="bento-compliance-chips">
+                    <div class="bento-chip chip-green">
+                      <i class="fas fa-shield-halved"></i> Lloyd's — Market Ready
+                    </div>
+                    <div class="bento-chip chip-blue">
+                      <i class="fas fa-sliders"></i> ISO 27001 — Control Aligned
+                    </div>
+                    <div class="bento-chip chip-cyan">
+                      <i class="fas fa-drafting-compass"></i> SOC 2 — Designed For
+                    </div>
+                    <div class="bento-chip chip-navy">
+                      <i class="fas fa-database"></i> GDPR — Residency Ready
+                    </div>
+                  </div>
+
+                  <!-- Key Capabilities List (Moved to Tile 2 to eliminate space gaps) -->
+                  <ul class="bento-benefit-list" id="ind-list">
+                    <li><i class="fas fa-check-circle"></i> Automated Claims Intake via Context DMS</li>
+                    <li><i class="fas fa-check-circle"></i> Legacy Policy Admin Modernisation to Azure</li>
+                    <li><i class="fas fa-check-circle"></i> Real-time Fraud Detection &amp; Risk Analytics</li>
+                    <li><i class="fas fa-check-circle"></i> Solvency II &amp; FCA Compliance Architectures</li>
+                  </ul>
+
+                  <div class="bento-sovereignty-card">
+                    <div class="sov-icon"><i class="fas fa-earth-europe"></i></div>
+                    <div class="sov-text">
+                      <strong>Data Sovereignty &amp; Governance</strong>
+                      <span id="bento-sov-desc">100% UK &amp; EU Boundary Enclaves · Built to Support Solvency II &amp; FCA Reporting</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tile 3: Live Telemetry & Performance Pod (Row 2, Span 6 cols) -->
+              <div class="bento-tile bento-telemetry-tile" id="bentoTelemetryTile">
+                <div class="bento-tile-glow"></div>
+                <div class="bento-tile-content">
+                  <div class="bento-tile-eyebrow">
+                    <i class="fas fa-chart-line"></i> Production Telemetry
+                  </div>
+
+                  <div class="bento-metrics-row">
+                    <div class="bento-metric-col">
+                      <div class="bento-metric-val text-builder" id="bento-stat1-num">98%</div>
+                      <div class="bento-metric-lbl" id="bento-stat1-label">ACORD &amp; FNOL Confidence</div>
+                    </div>
+                    <div class="bento-metric-divider"></div>
+                    <div class="bento-metric-col">
+                      <div class="bento-metric-val text-green" id="bento-stat2-num">&lt;2s</div>
+                      <div class="bento-metric-lbl" id="bento-stat2-label">Average AI Extraction</div>
+                    </div>
+                  </div>
+
+                  <p class="bento-stat-note" id="bento-stat-note">
+                    33% treaty claims processed via straight-through processing (STP)
+                  </p>
+                </div>
+              </div>
+
+              <!-- Tile 4: Cloud & Technology Ecosystem (Row 2, Span 6 cols) -->
+              <div class="bento-tile bento-ecosystem-tile" id="bentoEcosystemTile">
+                <div class="bento-tile-glow"></div>
+                <div class="bento-tile-content">
+                  <div class="bento-tile-eyebrow">
+                    <i class="fas fa-microchip"></i> Technology Stack
+                  </div>
+
+                  <div class="bento-tech-tags" id="bento-tech-stack">
+                    <span class="tech-tag tag-blue">Context Insure</span>
+                    <span class="tech-tag tag-purple">Azure OpenAI</span>
+                    <span class="tech-tag tag-cyan">Context DMS</span>
+                    <span class="tech-tag tag-green">Power Platform</span>
+                    <span class="tech-tag tag-navy">Azure Kubernetes</span>
+                  </div>
+
+                  <div class="bento-trust-footer">
+                    <i class="fas fa-shield-halved"></i>
+                    <span>Hardened Enterprise Standards</span>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /bento-cockpit-grid -->
+          </div><!-- /bento-inner-wrap -->
+        </div><!-- /bento-layer -->
+
+      </div><!-- /industry-sticky-stage -->
+    </div><!-- /industry-master-track -->
+
   </section>
 
 
 
   <!-- ════════════════════════════════════════════
-     TEAM & OFFICES
+     ABOUT & LEADERSHIP
      ════════════════════════════════════════════ -->
-  <section id="team" class="section section-bg-navy">
+  <section id="about" class="section section-bg-navy about-flagship-section">
     <div class="container">
+
+      <!-- Section Header -->
       <div class="section-header center reveal">
         <div class="section-line" style="margin-inline:auto;"></div>
-        <span class="eyebrow"><i class="fas fa-users"></i> Leadership</span>
-        <h2>Guided by Industry Experts</h2>
-        <p>Decades of combined experience in financial technology, enterprise software, and global delivery management.
-        </p>
+        <span class="eyebrow"><i class="fas fa-compass"></i> Company DNA &amp; Story</span>
+        <h2>Pioneering Insurance Technology &amp; Enterprise AI</h2>
+        <p>Founded in 2008 in London, VJSAR bridges deep Lloyd's &amp; London Market underwriting domain knowledge with modern Azure cloud, data, and agentic AI engineering across the UK and India.</p>
       </div>
 
-      <div class="team-grid reveal-stagger">
-        <div class="team-card">
-          <div class="avatar">VS</div>
-          <h4 class="team-name">Vijai Sisubalan</h4>
-          <div class="team-role">Director & Head of Finance</div>
-          <div class="team-social"><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <!-- ── 1. DUAL-ENGINE FLAGSHIP POD ── -->
+      <div class="about-flagship-card reveal">
+        <div class="about-flagship-grid">
+
+          <!-- Left Column: Narrative & Philosophy -->
+          <div class="flagship-story-col">
+            <div class="flagship-badge">
+              <span class="pulse-dot"></span>
+              <span>Est. 2008 &bull; City of London</span>
+            </div>
+            <h3 class="flagship-story-title">Bridging Underwriting Precision with Cloud Engineering</h3>
+            <p class="flagship-lead">
+              We partner with carriers, syndicates, brokers, and MGAs on the mission-critical systems that power the London Market &mdash; and we are the engineering team behind <strong>Context.Insure&trade;</strong>, our agentic AI platform purpose-built for insurance document lifecycle.
+            </p>
+            <p class="flagship-sub">
+              Combining over 16 years of market domain insight with technical depth in Microsoft Azure, distributed data pipelines, and zero-trust security architectures, we deliver rapid operational agility with unyielding regulatory compliance.
+            </p>
+
+            <!-- Mission Thesis Quote Callout -->
+            <div class="flagship-quote-card">
+              <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+              <div class="quote-content">
+                <p>&ldquo;Our vision is the quality of the work we deliver and the enduring trust we build during every business partnership.&rdquo;</p>
+                <span class="quote-author">&mdash; VJSAR Core Philosophy</span>
+              </div>
+            </div>
+
+            <!-- Domain Tags -->
+            <div class="flagship-tags">
+              <span class="f-tag"><i class="fas fa-shield-alt"></i> Solvency II &amp; FCA</span>
+              <span class="f-tag"><i class="fab fa-microsoft"></i> Azure Modernisation</span>
+              <span class="f-tag"><i class="fas fa-brain"></i> Agentic AI Pipelines</span>
+              <span class="f-tag"><i class="fas fa-network-wired"></i> Lloyd's STP APIs</span>
+            </div>
+          </div>
+
+          <!-- Right Column: 4 Strategic Capability Pillars (2x2 Matrix) -->
+          <div class="flagship-matrix-col">
+            <div class="matrix-grid-2x2">
+
+              <!-- Pillar 1 -->
+              <div class="matrix-card">
+                <div class="matrix-card-top">
+                  <div class="matrix-icon icon-blue"><i class="fas fa-landmark"></i></div>
+                  <span class="matrix-metric">16+ Yrs</span>
+                </div>
+                <h4 class="matrix-card-title">London Market Heritage</h4>
+                <p class="matrix-card-desc">Specialist insurance consultancy established in 2008, trusted across carriers, syndicates, and Lloyd's market brokers.</p>
+                <div class="matrix-badge">Tier-1 Market Proven</div>
+              </div>
+
+              <!-- Pillar 2 -->
+              <div class="matrix-card">
+                <div class="matrix-card-top">
+                  <div class="matrix-icon icon-cyan"><i class="fas fa-robot"></i></div>
+                  <span class="matrix-metric">AI-Native</span>
+                </div>
+                <h4 class="matrix-card-title">Context.Insure&trade; Suite</h4>
+                <p class="matrix-card-desc">Proprietary agentic AI and Context DMS converting unstructured broker schedules, emails, and slips into audit-ready records.</p>
+                <div class="matrix-badge">In-House Innovation</div>
+              </div>
+
+              <!-- Pillar 3 -->
+              <div class="matrix-card">
+                <div class="matrix-card-top">
+                  <div class="matrix-icon icon-green"><i class="fas fa-globe"></i></div>
+                  <span class="matrix-metric">24 / 7</span>
+                </div>
+                <h4 class="matrix-card-title">Follow-the-Sun ODC</h4>
+                <p class="matrix-card-desc">Seamless dual-continent delivery blending London advisory with scaled engineering hubs in Chennai &amp; Bengaluru.</p>
+                <div class="matrix-badge">Triple-Hub Synergy</div>
+              </div>
+
+              <!-- Pillar 4 -->
+              <div class="matrix-card">
+                <div class="matrix-card-top">
+                  <div class="matrix-icon icon-navy"><i class="fas fa-shield-halved"></i></div>
+                  <span class="matrix-metric">Zero-Trust</span>
+                </div>
+                <h4 class="matrix-card-title">Regulated Enclaves</h4>
+                <p class="matrix-card-desc">Hardened Azure architectures built for strict compliance: Solvency II, FCA, GDPR, HIPAA, and NHS DSP Toolkit standards.</p>
+                <div class="matrix-badge">High Assurance</div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+      <!-- ── 3. EXECUTIVE LEADERSHIP SHOWCASE (2-Column Interactive Spotlight) ── -->
+      <!-- Anchor for Navigation Link -->
+      <div id="team" class="team-anchor"></div>
+
+      <div class="leadership-stage reveal">
+        <div class="leadership-header-center">
+          <span class="eyebrow"><i class="fas fa-users"></i> Executive Leadership</span>
+          <h2 class="leadership-title">Guided by Industry Leaders</h2>
+          <p class="leadership-subtitle">
+            Decades of combined leadership across financial markets, global delivery, cloud engineering, and enterprise governance.
+          </p>
+        </div>
+
+        <div class="leadership-bento-grid">
+
+          <!-- Card 1: Vijai Sisubalan -->
+          <div class="exec-bento-card">
+            <div class="exec-card-portrait-wrap">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="exec-linkedin-badge" aria-label="Vijai Sisubalan LinkedIn" title="Connect with Vijai Sisubalan on LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <img src="MEMBERS/Vijai.png?v=4" alt="Vijai Sisubalan" class="exec-card-img" />
+            </div>
+            <div class="exec-card-body">
+              <div class="exec-float-badge">
+                <div class="exec-float-info">
+                  <strong class="exec-float-name">Vijai Sisubalan</strong>
+                  <span class="exec-float-role">Director &amp; Head of Finance</span>
+                </div>
+              </div>
+              <h4 class="exec-card-headline">Steering Financial Health &amp; Sustainable Global Scale</h4>
+              <p class="exec-card-bio">
+                Director &amp; Head of Finance at VJSAR, with a strong background in finance and strategic management. He plays a pivotal role in steering the company's financial health, overseeing financial planning, risk management, and ensuring sustainable growth.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Saritha -->
+          <div class="exec-bento-card">
+            <div class="exec-card-portrait-wrap">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="exec-linkedin-badge" aria-label="Saritha LinkedIn" title="Connect with Saritha on LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <img src="MEMBERS/Saritha.png?v=4" alt="Saritha" class="exec-card-img" />
+            </div>
+            <div class="exec-card-body">
+              <div class="exec-float-badge">
+                <div class="exec-float-info">
+                  <strong class="exec-float-name">Saritha</strong>
+                  <span class="exec-float-role">Non-Executive Director</span>
+                </div>
+              </div>
+              <h4 class="exec-card-headline">Strategic Governance, Risk &amp; Digital Transformation</h4>
+              <p class="exec-card-bio">
+                Experienced non-executive director with a strong track record in regulatory compliance, corporate governance, and innovation strategies. Skilled in supporting effective decision-making on audit and risk committees, driving growth and digital transformation.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: Subash Chakarapani -->
+          <div class="exec-bento-card">
+            <div class="exec-card-portrait-wrap">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="exec-linkedin-badge" aria-label="Subash Chakarapani LinkedIn" title="Connect with Subash Chakarapani on LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <img src="MEMBERS/Subash.png?v=4" alt="Subash Chakarapani" class="exec-card-img" />
+            </div>
+            <div class="exec-card-body">
+              <div class="exec-float-badge">
+                <div class="exec-float-info">
+                  <strong class="exec-float-name">Subash Chakarapani</strong>
+                  <span class="exec-float-role">Head of Operation &amp; Delivery</span>
+                </div>
+              </div>
+              <h4 class="exec-card-headline">Cross-Border Delivery &amp; Operational Excellence</h4>
+              <p class="exec-card-bio">
+                Head of Operation &amp; Delivery at VJSAR, bringing extensive experience in operations and strategic planning. His expertise in streamlining processes and fostering innovation plays a crucial role in driving VJSAR's growth and efficiency.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4: Abdul Baruwa -->
+          <div class="exec-bento-card">
+            <div class="exec-card-portrait-wrap">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="exec-linkedin-badge" aria-label="Abdul Baruwa LinkedIn" title="Connect with Abdul Baruwa on LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <img src="MEMBERS/Abdul.png?v=4" alt="Abdul Baruwa" class="exec-card-img" />
+            </div>
+            <div class="exec-card-body">
+              <div class="exec-float-badge">
+                <div class="exec-float-info">
+                  <strong class="exec-float-name">Abdul Baruwa</strong>
+                  <span class="exec-float-role">Head of Technology</span>
+                </div>
+              </div>
+              <h4 class="exec-card-headline">Cloud-Native Architecture &amp; Agentic AI Innovation</h4>
+              <p class="exec-card-bio">
+                Head of Technology at VJSAR, leading the technological vision and development. With a strong background in software architecture and product development, he ensures that VJSAR stays at the forefront of technological advancements.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+     CAREERS BREAKOUT POD (Car.mp4 Video Background)
+     ════════════════════════════════════════════ -->
+  <section id="careers" class="section-careers-wrap">
+    <div class="container">
+      <div class="careers-banner-card reveal">
+
+        <!-- Background Video (Car.mp4) -->
+        <div class="careers-video-wrap">
+          <video class="careers-bg-video" autoplay muted loop playsinline preload="auto" src="Car.mp4">
+            <source src="Car.mp4" type="video/mp4">
+          </video>
+          <div class="careers-video-overlay"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="careers-banner-content">
+          <h2 class="careers-title">Build the Future With Us</h2>
+          <p class="careers-desc">
+            We hire engineers and consultants who want their work to matter in a market that underpins global trade. You will work with client teams in London and our delivery centres in Chennai and Bengaluru &mdash; on production systems and applied AI, to the standard serious delivery demands.
+          </p>
+          <div class="careers-action">
+            <button class="btn btn-careers-open open-modal">
+              View open roles
+            </button>
           </div>
         </div>
 
-        <div class="team-card">
-          <div class="avatar">S</div>
-          <h4 class="team-name">Saritha</h4>
-          <div class="team-role">Non-Executive Director</div>
-          <div class="team-social"><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="avatar">SC</div>
-          <h4 class="team-name">Subash Chakarapani</h4>
-          <div class="team-role">Head of Operation & Delivery</div>
-          <div class="team-social"><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="avatar">AB</div>
-          <h4 class="team-name">Abdul Baruwa</h4>
-          <div class="team-role">Head of Technology</div>
-          <div class="team-social"><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -812,7 +1342,7 @@
           <ul class="footer-links">
             <li><a href="#team"><i class="fas fa-users"></i> Leadership</a></li>
             <li><a href="#industries"><i class="fas fa-building"></i> Industries</a></li>
-            <li><a href="#calculator"><i class="fas fa-calculator"></i> Project Estimator</a></li>
+            <li><a href="#contact" class="open-modal"><i class="fas fa-calculator"></i> Project Estimator</a></li>
             <li><a href="#platform"><i class="fas fa-layer-group"></i> The Context Suite</a></li>
             <li><a href="mailto:info@vjsar.com" class="footer-highlight-link"><i class="fas fa-envelope"></i>
                 info@vjsar.com</a></li>
@@ -821,7 +1351,7 @@
       </div>
 
       <!-- ── FOOTER OFFICES / GLOBAL FOOTPRINT (Clean, Decent, Corporate) ── -->
-      <div class="footer-offices-section" id="global-footprint">
+      <div class="footer-offices-section" id="contact">
         <div class="footer-footprint-container">
           <!-- Left side: Global Footprint intro & Contact Us -->
           <div class="footer-footprint-left">
@@ -965,21 +1495,27 @@
     </div>
   </footer>
 
-  <script src="app.js?v=11"></script>
+  <script src="app.js?v=171"></script>
   <script>
-    /* ── Cloud Adoption card video play/pause on hover ── */
+    /* ── Service cards video play/pause on hover ── */
     (function () {
       document.querySelectorAll('.svc-video-card').forEach(card => {
         const video = card.querySelector('.svc-bg-video');
         if (!video) return;
 
+        let resetTimer = null;
         card.addEventListener('mouseenter', () => {
+          if (resetTimer) { clearTimeout(resetTimer); resetTimer = null; }
           video.currentTime = 0;
           video.play().catch(() => { });
         });
 
         card.addEventListener('mouseleave', () => {
-          video.pause();
+          resetTimer = setTimeout(() => {
+            video.pause();
+            video.currentTime = 0;
+            resetTimer = null;
+          }, 450);
         });
       });
 
