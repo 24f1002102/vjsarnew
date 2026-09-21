@@ -1682,12 +1682,13 @@ p {
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.42s ease;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
 }
 
-.pf-card:hover .pf-card-video {
-  opacity: 1;
+.pf-card:hover .pf-card-video,
+.pf-card.is-hovered .pf-card-video {
+  opacity: 1 !important;
 }
 
 /* White dulling overlay — protects text readability on the left throughout hover & hover-away */
@@ -1701,19 +1702,20 @@ p {
       transparent 100%);
   opacity: 0;
   transition: opacity 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
   border-radius: 20px;
 }
 
-.pf-card:hover .pf-card-overlay {
-  opacity: 1;
+.pf-card:hover .pf-card-overlay,
+.pf-card.is-hovered .pf-card-overlay {
+  opacity: 1 !important;
 }
 
 /* Content: width locked to base card size via JS — text NEVER reflows */
 .pf-card-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   padding: 2rem 1.75rem 1.75rem;
@@ -2518,7 +2520,7 @@ p {
 /* ── Flowchart Initial Header: Only "Our Core Verticals" ── */
 .flowchart-header {
   text-align: center;
-  margin-bottom: 0.65rem;
+  margin-bottom: 1.85rem;
   transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
@@ -2547,31 +2549,6 @@ p {
   line-height: 1.15;
 }
 
-/* ── Pencil-Drawn Smooth Bezier Curves (Branching out from center) ── */
-.flowchart-svg-wrap {
-  width: 100%;
-  max-width: 1240px;
-  height: 80px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  margin: 0.35rem auto 0.75rem;
-  pointer-events: none;
-}
-
-.flowchart-svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-.flow-pencil-path {
-  fill: none;
-  stroke-linecap: round;
-  transition: stroke-dashoffset 0.08s linear;
-  filter: drop-shadow(0 2px 6px rgba(36, 182, 234, 0.35));
-}
-
 /* ── 4 Classification Cards Row (Spacious, Balanced Vertical Footprint) ── */
 .flowchart-cards-row {
   display: grid;
@@ -2596,6 +2573,7 @@ p {
   cursor: pointer;
   user-select: none;
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  will-change: opacity, transform;
 }
 
 .flow-card:hover {
@@ -3450,11 +3428,12 @@ p {
     padding-top: 2rem !important;
     padding-bottom: 2.5rem !important;
   }
-  .flowchart-svg-wrap {
-    display: none !important;
-  }
   .flowchart-cards-row {
     grid-template-columns: repeat(2, 1fr) !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .flow-card {
     opacity: 1 !important;
     transform: none !important;
   }

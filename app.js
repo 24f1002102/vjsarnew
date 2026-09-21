@@ -606,33 +606,10 @@ function initIndustryFlowchartScroll() {
   const bentoLayer = document.getElementById('bentoLayer');
   const bentoInner = document.getElementById('bentoInnerWrap');
   const cardsRow = document.getElementById('flowchartCardsRow');
-  const flowCards = document.querySelectorAll('.flow-card');
+  const flowCards = Array.from(document.querySelectorAll('.flow-card'));
   const tabBtns = document.querySelectorAll('.bento-tab-btn');
 
-  // Pencil Bezier Paths
-  const b1 = document.getElementById('pencilBranch1');
-  const b2 = document.getElementById('pencilBranch2');
-  const b3 = document.getElementById('pencilBranch3');
-  const b4 = document.getElementById('pencilBranch4');
-  const paths = [b1, b2, b3, b4].filter(Boolean);
-
   if (!track || !stickyStage) return;
-
-  // Accurately compute native path lengths for pencil drawing
-  let pathLens = [];
-  function measurePaths() {
-    pathLens = paths.map(p => {
-      try {
-        const len = p.getTotalLength() || 400;
-        p.style.strokeDasharray = `${len}`;
-        p.style.strokeDashoffset = `${len}`;
-        return len;
-      } catch (e) {
-        return 400;
-      }
-    });
-  }
-  measurePaths();
 
   let targetApproachP = 0;
   let currentApproachP = 0;
@@ -648,10 +625,10 @@ function initIndustryFlowchartScroll() {
     const stickyH = stickyStage.offsetHeight || (window.innerHeight - stickyTop);
     const maxScrollDist = Math.max(180, track.offsetHeight - stickyH);
 
-    // Approach distance before locking at stickyTop (Image 1)
-    const approachDist = 260;
+    // Approach distance before locking at stickyTop — ample runway for the staircase ripple
+    const approachDist = 380;
 
-    // How far we have scrolled during the approach into Image 1 (0 to 1)
+    // How far we have scrolled during the approach (0 to 1)
     let approachP = 0;
     if (rect.top <= stickyTop) {
       approachP = 1;
@@ -701,22 +678,30 @@ function initIndustryFlowchartScroll() {
   function applyState(approach, pinned) {
     if (window.innerWidth <= 992) return;
 
-    // ── Phase 1: Pencil-Drawn Curves Branching Out (approach 0.00 to 0.60) ──
-    const drawP = Math.min(1, Math.max(0, approach / 0.60));
-    paths.forEach((path, i) => {
-      const len = pathLens[i] || 400;
-      path.style.strokeDashoffset = `${len * (1 - drawP)}`;
+    // ── Phase 1: 4 Cards Smooth Staircase Wave (approach 0.00 to 1.00) ──
+    // The leftmost grid fades in and ascends first, followed closely by the 2nd, 3rd, and 4th
+    // like a smooth forming staircase. Once approach = 1.0, all 4 cards rest at translateY(0)
+    // with opacity 1 on the exact same line, spacing, and alignment.
+    const TOTAL_CARDS = flowCards.length; // 4
+    const CARD_WINDOW = 0.52; // Duration of each card's individual animation window
+    const STAGGER = (1 - CARD_WINDOW) / Math.max(1, TOTAL_CARDS - 1); // 0.48 / 3 = 0.16
+
+    flowCards.forEach((card, i) => {
+      const start = i * STAGGER;
+      const rawProgress = Math.min(1, Math.max(0, (approach - start) / CARD_WINDOW));
+      // Ease out cubic for natural deceleration as each stair step arrives into place
+      const easeProgress = 1 - Math.pow(1 - rawProgress, 2.6);
+
+      card.style.opacity = `${easeProgress}`;
+      card.style.transform = `translateY(${(1 - easeProgress) * 48}px)`;
     });
 
-    // ── Phase 2: 4 Cards Rise Up Together (approach 0.25 to 0.95) ──
-    // By approach = 1.0 (when section reaches navbar in Image 1), cards are 100% fully up!
-    const cardsP = Math.min(1, Math.max(0, (approach - 0.25) / 0.70));
     if (cardsRow) {
-      cardsRow.style.opacity = `${cardsP}`;
-      cardsRow.style.transform = `translateY(${(1 - cardsP) * 20}px)`;
+      cardsRow.style.opacity = '1';
+      cardsRow.style.transform = 'none';
     }
 
-    // ── Phase 3: Hold Window inside sticky stage (pinned 0.00 to 0.38) ──
+    // ── Phase 2: Hold Window inside sticky stage (pinned 0.00 to 0.38) ──
     // All 4 grids stay rock-solid in full resting view for at least 2 full scroll ticks
     if (pinned < 0.38) {
       if (flowchartLayer) {
@@ -843,7 +828,6 @@ function initIndustryFlowchartScroll() {
 
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', () => {
-    measurePaths();
     if (window.innerWidth <= 992) {
       if (flowchartLayer) {
         flowchartLayer.style.opacity = '1';
@@ -859,13 +843,16 @@ function initIndustryFlowchartScroll() {
         cardsRow.style.opacity = '1';
         cardsRow.style.transform = 'none';
       }
+      flowCards.forEach(card => {
+        card.style.opacity = '1';
+        card.style.transform = 'none';
+      });
     } else {
       onScroll();
     }
   });
 
-  // Initial measurement and scroll update
-  setTimeout(measurePaths, 150);
+  // Initial scroll update
   onScroll();
 }
 
@@ -1154,30 +1141,44 @@ function initPlatformSlider() {
   });
 
   // ── Video hover play/pause ──────────────────────────────────
-  // Browsers won't autoplay invisible videos — must call .play() explicitly
   cards.forEach(card => {
     const video = card.querySelector('.pf-card-video');
     if (!video) return;
 
+    video.muted = true;
+    video.playsInline = true;
     video.preload = 'auto';
+
+    // Start playback eagerly so frames are decoded and ready when hovered
+    const safePlay = () => {
+      video.muted = true;
+      const p = video.play();
+      if (p !== undefined) {
+        p.catch(() => {});
+      }
+    };
+    safePlay();
+
     let resetTimer = null;
 
-    card.addEventListener('mouseenter', () => {
-      // Cancel any pending reset from a previous mouseleave
-      if (resetTimer) { clearTimeout(resetTimer); resetTimer = null; }
-      video.currentTime = 0;
-      video.play().catch(() => {});
-    });
-
-    card.addEventListener('mouseleave', () => {
-      // Delay pause and reset until AFTER the CSS opacity fade-out completes
-      // This keeps motion natural while dissolving and avoids frozen frames or flashes
-      resetTimer = setTimeout(() => {
-        video.pause();
-        video.currentTime = 0;
+    const onEnter = () => {
+      card.classList.add('is-hovered');
+      if (resetTimer) {
+        clearTimeout(resetTimer);
         resetTimer = null;
-      }, 480);
-    });
+      }
+      safePlay();
+    };
+
+    const onLeave = () => {
+      card.classList.remove('is-hovered');
+      // No abrupt seek or freeze; video continues smooth muted loop
+    };
+
+    card.addEventListener('mouseenter', onEnter);
+    card.addEventListener('mouseleave', onLeave);
+    card.addEventListener('pointerenter', onEnter);
+    card.addEventListener('pointerleave', onLeave);
   });
 }
 
